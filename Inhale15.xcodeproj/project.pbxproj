@@ -16,6 +16,9 @@
 		84621B9B2D46EC110005F339 /* Inhale15UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621B9A2D46EC110005F339 /* Inhale15UITests.swift */; };
 		84621B9D2D46EC110005F339 /* Inhale15UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621B9C2D46EC110005F339 /* Inhale15UITestsLaunchTests.swift */; };
 		84621BAB2D46EE830005F339 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84621BAA2D46EE830005F339 /* SnapKit */; };
+		84829D1D2D4AD2BA0009CC11 /* Animation - 1727784149695.json in Resources */ = {isa = PBXBuildFile; fileRef = 84829D1C2D4AD2BA0009CC11 /* Animation - 1727784149695.json */; };
+		84829D202D4AD64A0009CC11 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 84829D1F2D4AD64A0009CC11 /* Lottie */; };
+		84829D222D4ADEFC0009CC11 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */; };
 		84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2465D2D4AC641009A3963 /* SplashViewController.swift */; };
 		84B246602D4AC65A009A3963 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2465F2D4AC65A009A3963 /* InstructionViewController.swift */; };
 		84B246622D4AC66B009A3963 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B246612D4AC66B009A3963 /* TimerViewController.swift */; };
@@ -52,6 +55,8 @@
 		84621B962D46EC110005F339 /* Inhale15UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Inhale15UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84621B9A2D46EC110005F339 /* Inhale15UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inhale15UITests.swift; sourceTree = "<group>"; };
 		84621B9C2D46EC110005F339 /* Inhale15UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inhale15UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84829D1C2D4AD2BA0009CC11 /* Animation - 1727784149695.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1727784149695.json"; sourceTree = "<group>"; };
+		84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		84B2465D2D4AC641009A3963 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		84B2465F2D4AC65A009A3963 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		84B246612D4AC66B009A3963 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84621BAB2D46EE830005F339 /* SnapKit in Frameworks */,
+				84829D202D4AD64A0009CC11 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +155,7 @@
 		84B246582D4AC52D009A3963 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 		84B2465C2D4AC566009A3963 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84829D1C2D4AD2BA0009CC11 /* Animation - 1727784149695.json */,
 				84621B842D46EC100005F339 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -204,6 +212,7 @@
 			name = Inhale15;
 			packageProductDependencies = (
 				84621BAA2D46EE830005F339 /* SnapKit */,
+				84829D1F2D4AD64A0009CC11 /* Lottie */,
 			);
 			productName = Inhale15;
 			productReference = 84621B732D46EC0B0005F339 /* Inhale15.app */;
@@ -279,6 +288,7 @@
 			mainGroup = 84621B6A2D46EC0B0005F339;
 			packageReferences = (
 				84621BA92D46EE830005F339 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				84829D1E2D4AD64A0009CC11 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 84621B742D46EC0B0005F339 /* Products */;
 			projectDirPath = "";
@@ -298,6 +308,7 @@
 			files = (
 				84621B862D46EC100005F339 /* LaunchScreen.storyboard in Resources */,
 				84621B832D46EC100005F339 /* Assets.xcassets in Resources */,
+				84829D1D2D4AD2BA0009CC11 /* Animation - 1727784149695.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +340,7 @@
 				84B246642D4AC68C009A3963 /* StatsViewController.swift in Sources */,
 				84B246622D4AC66B009A3963 /* TimerViewController.swift in Sources */,
 				84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */,
+				84829D222D4ADEFC0009CC11 /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +682,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		84829D1E2D4AD64A0009CC11 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -677,6 +697,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84621BA92D46EE830005F339 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		84829D1F2D4AD64A0009CC11 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84829D1E2D4AD64A0009CC11 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 
