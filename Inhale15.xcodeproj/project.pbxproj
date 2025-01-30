@@ -19,6 +19,7 @@
 		84829D1D2D4AD2BA0009CC11 /* Animation - 1727784149695.json in Resources */ = {isa = PBXBuildFile; fileRef = 84829D1C2D4AD2BA0009CC11 /* Animation - 1727784149695.json */; };
 		84829D202D4AD64A0009CC11 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 84829D1F2D4AD64A0009CC11 /* Lottie */; };
 		84829D222D4ADEFC0009CC11 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */; };
+		84829D242D4C2C700009CC11 /* InstructionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84829D232D4C2C700009CC11 /* InstructionViewModel.swift */; };
 		84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2465D2D4AC641009A3963 /* SplashViewController.swift */; };
 		84B246602D4AC65A009A3963 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2465F2D4AC65A009A3963 /* InstructionViewController.swift */; };
 		84B246622D4AC66B009A3963 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B246612D4AC66B009A3963 /* TimerViewController.swift */; };
@@ -57,6 +58,7 @@
 		84621B9C2D46EC110005F339 /* Inhale15UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inhale15UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84829D1C2D4AD2BA0009CC11 /* Animation - 1727784149695.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1727784149695.json"; sourceTree = "<group>"; };
 		84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		84829D232D4C2C700009CC11 /* InstructionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewModel.swift; sourceTree = "<group>"; };
 		84B2465D2D4AC641009A3963 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		84B2465F2D4AC65A009A3963 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		84B246612D4AC66B009A3963 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */,
+				84829D232D4C2C700009CC11 /* InstructionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				84621B792D46EC0B0005F339 /* SceneDelegate.swift in Sources */,
 				84B246642D4AC68C009A3963 /* StatsViewController.swift in Sources */,
 				84B246622D4AC66B009A3963 /* TimerViewController.swift in Sources */,
+				84829D242D4C2C700009CC11 /* InstructionViewModel.swift in Sources */,
 				84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */,
 				84829D222D4ADEFC0009CC11 /* SplashViewModel.swift in Sources */,
 			);

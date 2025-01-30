@@ -67,10 +67,10 @@ class SplashViewController: UIViewController {
     }
     
     private func navigateToNextScreen() {
-        let nextVC = InstructionViewController()
-        nextVC.modalTransitionStyle = .crossDissolve
-        nextVC.modalPresentationStyle = .fullScreen
-        present(nextVC, animated: true, completion: nil)
+        let instructionVC = InstructionViewController()
+        let navController = UINavigationController(rootViewController: instructionVC)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
     }
 }
 
