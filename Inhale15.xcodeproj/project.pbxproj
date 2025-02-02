@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842B55CC2D4F7E6A008301BE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CA2D4F7E6A008301BE /* Model.xcdatamodeld */; };
+		842B55CF2D4F7F32008301BE /* BreathSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CD2D4F7F32008301BE /* BreathSession+CoreDataClass.swift */; };
+		842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */; };
 		84621B772D46EC0B0005F339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621B762D46EC0B0005F339 /* AppDelegate.swift */; };
 		84621B792D46EC0B0005F339 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621B782D46EC0B0005F339 /* SceneDelegate.swift */; };
 		84621B812D46EC0B0005F339 /* Inhale15.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84621B7F2D46EC0B0005F339 /* Inhale15.xcdatamodeld */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842B55CB2D4F7E6A008301BE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		842B55CD2D4F7F32008301BE /* BreathSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreathSession+CoreDataClass.swift"; sourceTree = "<group>"; };
+		842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreathSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84621B732D46EC0B0005F339 /* Inhale15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inhale15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84621B762D46EC0B0005F339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84621B782D46EC0B0005F339 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +101,9 @@
 		84621B6A2D46EC0B0005F339 = {
 			isa = PBXGroup;
 			children = (
+				842B55CD2D4F7F32008301BE /* BreathSession+CoreDataClass.swift */,
+				842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */,
+				842B55CA2D4F7E6A008301BE /* Model.xcdatamodeld */,
 				84621B752D46EC0B0005F339 /* Inhale15 */,
 				84621B8F2D46EC110005F339 /* Inhale15Tests */,
 				84621B992D46EC110005F339 /* Inhale15UITests */,
@@ -339,11 +348,14 @@
 				84B246602D4AC65A009A3963 /* InstructionViewController.swift in Sources */,
 				84621B812D46EC0B0005F339 /* Inhale15.xcdatamodeld in Sources */,
 				84621B772D46EC0B0005F339 /* AppDelegate.swift in Sources */,
+				842B55CF2D4F7F32008301BE /* BreathSession+CoreDataClass.swift in Sources */,
 				84621B792D46EC0B0005F339 /* SceneDelegate.swift in Sources */,
 				84B246642D4AC68C009A3963 /* StatsViewController.swift in Sources */,
 				84B246622D4AC66B009A3963 /* TimerViewController.swift in Sources */,
 				84829D242D4C2C700009CC11 /* InstructionViewModel.swift in Sources */,
+				842B55CC2D4F7E6A008301BE /* Model.xcdatamodeld in Sources */,
 				84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */,
+				842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */,
 				84829D222D4ADEFC0009CC11 /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,6 +722,16 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
+		842B55CA2D4F7E6A008301BE /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				842B55CB2D4F7E6A008301BE /* Model.xcdatamodel */,
+			);
+			currentVersion = 842B55CB2D4F7E6A008301BE /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		84621B7F2D46EC0B0005F339 /* Inhale15.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
