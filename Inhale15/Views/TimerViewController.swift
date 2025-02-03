@@ -38,9 +38,10 @@ class TimerViewController: UIViewController {
         let fifteenSecButton = createButton(title: "15 сек", action: #selector(fifteenSecTapped))
         let resetButton = createButton(title: "Сброс", action: #selector(resetTapped))
         let clearHistoryButton = createButton(title: "Очистить историю", action: #selector(clearHistoryTapped))
-        
-        let stack = UIStackView(arrangedSubviews: [startPauseButton, fifteenSecButton, resetButton, clearHistoryButton])
-        stack.axis = .vertical
+        let statsButton = createButton(title: "Статистика", action: #selector(openStatsTapped))
+               
+               let stack = UIStackView(arrangedSubviews: [startPauseButton, fifteenSecButton, resetButton, clearHistoryButton, statsButton])
+               stack.axis = .vertical
         stack.spacing = 10
         stack.distribution = .fillEqually
         
@@ -96,6 +97,11 @@ class TimerViewController: UIViewController {
         viewModel.clearAllSessions()
         tableView.reloadData()
     }
+    
+    @objc private func openStatsTapped() {
+          let statsViewController = StatsViewController()
+          navigationController?.pushViewController(statsViewController, animated: true)
+      }
 }
 
 extension TimerViewController: UITableViewDataSource {

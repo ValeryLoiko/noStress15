@@ -91,7 +91,6 @@ class InstructionViewController: UIViewController {
     }
     
     @objc private func nextTapped() {
-        print("Кнопка нажата!") // Проверим в консоли
         let timerVC = TimerViewController()
         timerVC.modalTransitionStyle = .crossDissolve
         timerVC.modalPresentationStyle = .fullScreen
