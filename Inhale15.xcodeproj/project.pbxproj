@@ -12,6 +12,8 @@
 		842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */; };
 		842B55D32D4FACB3008301BE /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55D22D4FACB3008301BE /* CoreDataService.swift */; };
 		842B55D52D4FAD50008301BE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55D42D4FAD50008301BE /* TimerViewModel.swift */; };
+		842B55D72D52C16C008301BE /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55D62D52C16C008301BE /* StatsViewModel.swift */; };
+		842B55DA2D52C359008301BE /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 842B55D92D52C359008301BE /* DGCharts */; };
 		84621B772D46EC0B0005F339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621B762D46EC0B0005F339 /* AppDelegate.swift */; };
 		84621B792D46EC0B0005F339 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621B782D46EC0B0005F339 /* SceneDelegate.swift */; };
 		84621B812D46EC0B0005F339 /* Inhale15.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84621B7F2D46EC0B0005F339 /* Inhale15.xcdatamodeld */; };
@@ -54,6 +56,7 @@
 		842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreathSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		842B55D22D4FACB3008301BE /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		842B55D42D4FAD50008301BE /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		842B55D62D52C16C008301BE /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		84621B732D46EC0B0005F339 /* Inhale15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inhale15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84621B762D46EC0B0005F339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84621B782D46EC0B0005F339 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84621BAB2D46EE830005F339 /* SnapKit in Frameworks */,
+				842B55DA2D52C359008301BE /* DGCharts in Frameworks */,
 				84829D202D4AD64A0009CC11 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +186,7 @@
 				84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */,
 				84829D232D4C2C700009CC11 /* InstructionViewModel.swift */,
 				842B55D42D4FAD50008301BE /* TimerViewModel.swift */,
+				842B55D62D52C16C008301BE /* StatsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			packageProductDependencies = (
 				84621BAA2D46EE830005F339 /* SnapKit */,
 				84829D1F2D4AD64A0009CC11 /* Lottie */,
+				842B55D92D52C359008301BE /* DGCharts */,
 			);
 			productName = Inhale15;
 			productReference = 84621B732D46EC0B0005F339 /* Inhale15.app */;
@@ -315,6 +321,7 @@
 			packageReferences = (
 				84621BA92D46EE830005F339 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				84829D1E2D4AD64A0009CC11 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				842B55D82D52C359008301BE /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 84621B742D46EC0B0005F339 /* Products */;
 			projectDirPath = "";
@@ -369,6 +376,7 @@
 				84B246642D4AC68C009A3963 /* StatsViewController.swift in Sources */,
 				84B246622D4AC66B009A3963 /* TimerViewController.swift in Sources */,
 				84829D242D4C2C700009CC11 /* InstructionViewModel.swift in Sources */,
+				842B55D72D52C16C008301BE /* StatsViewModel.swift in Sources */,
 				842B55CC2D4F7E6A008301BE /* Model.xcdatamodeld in Sources */,
 				84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */,
 				842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */,
@@ -706,6 +714,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		842B55D82D52C359008301BE /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		84621BA92D46EE830005F339 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -725,6 +741,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		842B55D92D52C359008301BE /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 842B55D82D52C359008301BE /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
 		84621BAA2D46EE830005F339 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 84621BA92D46EE830005F339 /* XCRemoteSwiftPackageReference "SnapKit" */;

@@ -37,4 +37,16 @@ class CoreDataService {
             try? context.save()
         }
     }
+    // Извлечение сессий за определённый период
+    func fetchSessions(from startDate: Date, to endDate: Date) -> [BreathSession] {
+        let fetchRequest: NSFetchRequest<BreathSession> = BreathSession.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "date >= %@ AND date <= %@", startDate as NSDate, endDate as NSDate)
+        
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            print("Ошибка при извлечении данных: \(error)")
+            return []
+        }
+    }
 }
