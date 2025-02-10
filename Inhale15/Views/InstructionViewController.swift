@@ -51,6 +51,18 @@ class InstructionViewController: UIViewController {
         nextButton.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Начинаем с полной прозрачности
+        view.alpha = 0
+        
+        // Плавно делаем экран видимым за 2 секунды
+        UIView.animate(withDuration: 2.0, animations: {
+            self.view.alpha = 1
+        })
+    }
+    
     private func setupLayout() {
         let containerView = UIView()
         containerView.backgroundColor = UIColor(white: 0.1, alpha: 0.5) // Полупрозрачный фон под текстом

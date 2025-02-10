@@ -12,16 +12,13 @@ class SplashViewModel {
     var animationName: String {
         return "Animation - 1727784149695"
     }
-    var logoImageName: String {
-        return "background"
-    }
-    var onFinishSplash: (() -> Void)?
+    
+    var onNavigateToInstruction: (() -> Void)?
     
     func startSplashTimer() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.onFinishSplash?() // Вызываем callback
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [weak self] in
+            debugPrint("Navigating to InstructionVC") 
+            self?.onNavigateToInstruction?()
         }
     }
-    
-    
 }

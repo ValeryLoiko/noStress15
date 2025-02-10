@@ -185,8 +185,8 @@
 		84B246582D4AC52D009A3963 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */,
 				84829D232D4C2C700009CC11 /* InstructionViewModel.swift */,
+				84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */,
 				842B55D42D4FAD50008301BE /* TimerViewModel.swift */,
 				842B55D62D52C16C008301BE /* StatsViewModel.swift */,
 			);
