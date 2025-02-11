@@ -14,6 +14,7 @@
 		842B55D52D4FAD50008301BE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55D42D4FAD50008301BE /* TimerViewModel.swift */; };
 		842B55D72D52C16C008301BE /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55D62D52C16C008301BE /* StatsViewModel.swift */; };
 		842B55DA2D52C359008301BE /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 842B55D92D52C359008301BE /* DGCharts */; };
+		845CCC972D5BFDAA00EE0FE1 /* BreathingSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845CCC962D5BFDAA00EE0FE1 /* BreathingSessionCell.swift */; };
 		84621B772D46EC0B0005F339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621B762D46EC0B0005F339 /* AppDelegate.swift */; };
 		84621B792D46EC0B0005F339 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84621B782D46EC0B0005F339 /* SceneDelegate.swift */; };
 		84621B812D46EC0B0005F339 /* Inhale15.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84621B7F2D46EC0B0005F339 /* Inhale15.xcdatamodeld */; };
@@ -58,6 +59,7 @@
 		842B55D22D4FACB3008301BE /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		842B55D42D4FAD50008301BE /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		842B55D62D52C16C008301BE /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		845CCC962D5BFDAA00EE0FE1 /* BreathingSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingSessionCell.swift; sourceTree = "<group>"; };
 		84621B732D46EC0B0005F339 /* Inhale15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inhale15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84621B762D46EC0B0005F339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84621B782D46EC0B0005F339 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 				842B55D22D4FACB3008301BE /* CoreDataService.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		845CCC952D5BFD8A00EE0FE1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				845CCC962D5BFDAA00EE0FE1 /* BreathingSessionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		84621B6A2D46EC0B0005F339 = {
@@ -196,6 +206,7 @@
 		84B246592D4AC543009A3963 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				845CCC952D5BFD8A00EE0FE1 /* Cells */,
 				84B2465D2D4AC641009A3963 /* SplashViewController.swift */,
 				84B2465F2D4AC65A009A3963 /* InstructionViewController.swift */,
 				84B246612D4AC66B009A3963 /* TimerViewController.swift */,
@@ -376,6 +387,7 @@
 				84621B772D46EC0B0005F339 /* AppDelegate.swift in Sources */,
 				842B55CF2D4F7F32008301BE /* BreathSession+CoreDataClass.swift in Sources */,
 				84621B792D46EC0B0005F339 /* SceneDelegate.swift in Sources */,
+				845CCC972D5BFDAA00EE0FE1 /* BreathingSessionCell.swift in Sources */,
 				84B246642D4AC68C009A3963 /* StatsViewController.swift in Sources */,
 				84B246622D4AC66B009A3963 /* TimerViewController.swift in Sources */,
 				84829D242D4C2C700009CC11 /* InstructionViewModel.swift in Sources */,

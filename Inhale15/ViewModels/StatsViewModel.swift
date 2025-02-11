@@ -40,6 +40,6 @@ class StatsViewModel {
             startDate = Date.distantPast
         }
         
-        return coreDataService.fetchSessions(from: startDate, to: now)
+        return coreDataService.fetchSessions()
     }
 }
