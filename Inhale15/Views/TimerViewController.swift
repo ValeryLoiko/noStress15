@@ -102,6 +102,8 @@ class TimerViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         backgroundGradientLayer.frame = view.bounds
+        viewModel.fetchSessions() // При возврате на экран обновляем данные
+                tableView.reloadData()
     }
     
     private func setupUI() {
@@ -181,9 +183,17 @@ class TimerViewController: UIViewController {
     }
     
     @objc private func openStatsTapped() {
-        let statsViewController = StatsViewController()
-        statsViewController.modalPresentationStyle = .fullScreen
-        present(statsViewController, animated: true)
+           let statsViewController = StatsViewController()
+           statsViewController.delegate = self  // Устанавливаем делегата
+           navigationController?.pushViewController(statsViewController, animated: true)
+       }
+}
+
+// MARK: - StatsViewControllerDelegate
+extension TimerViewController: StatsViewControllerDelegate {
+    func didClearHistory() {
+        viewModel.fetchSessions()
+        tableView.reloadData()
     }
 }
 
