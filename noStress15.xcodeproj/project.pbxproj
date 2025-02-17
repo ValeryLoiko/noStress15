@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842283552D6402F8003566F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842283542D6402F8003566F3 /* HomeViewController.swift */; };
 		842B55CC2D4F7E6A008301BE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CA2D4F7E6A008301BE /* Model.xcdatamodeld */; };
 		842B55CF2D4F7F32008301BE /* BreathSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CD2D4F7F32008301BE /* BreathSession+CoreDataClass.swift */; };
 		842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842283542D6402F8003566F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		842B55CB2D4F7E6A008301BE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		842B55CD2D4F7F32008301BE /* BreathSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreathSession+CoreDataClass.swift"; sourceTree = "<group>"; };
 		842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreathSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				84B246612D4AC66B009A3963 /* TimerViewController.swift */,
 				84B246632D4AC68C009A3963 /* StatsViewController.swift */,
 				849C397F2D56AD69005A3550 /* DonateViewController.swift */,
+				842283542D6402F8003566F3 /* HomeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				84899D682D63F63600128432 /* ColorPalette.swift in Sources */,
 				842B55CC2D4F7E6A008301BE /* Model.xcdatamodeld in Sources */,
 				84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */,
+				842283552D6402F8003566F3 /* HomeViewController.swift in Sources */,
 				84899D662D63F61100128432 /* UIFactory.swift in Sources */,
 				842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */,
 				84829D222D4ADEFC0009CC11 /* SplashViewModel.swift in Sources */,

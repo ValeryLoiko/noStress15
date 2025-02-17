@@ -11,15 +11,14 @@ class SplashViewModel {
     
     static let animationName = "Animation - 1727784149695"
     
-    var onNavigateToInstruction: (() -> Void)?
+    var onNavigateToHome: (() -> Void)?
     private var splashWorkItem: DispatchWorkItem?
 
     func startSplashTimer() {
         splashWorkItem = DispatchWorkItem { [weak self] in
-            debugPrint("Navigating to InstructionVC")
-            self?.onNavigateToInstruction?()
+            debugPrint("Navigating to HomeVC")
+            self?.onNavigateToHome?()
         }
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: splashWorkItem!)
     }
     

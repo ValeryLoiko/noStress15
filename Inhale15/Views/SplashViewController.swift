@@ -86,8 +86,8 @@ class SplashViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        viewModel.onNavigateToInstruction = { [weak self] in
-            self?.navigateToInstruction()
+        viewModel.onNavigateToHome = { [weak self] in
+            self?.navigateToHome()
         }
     }
     
@@ -110,26 +110,23 @@ class SplashViewController: UIViewController {
         viewModel.startSplashTimer()
     }
     
-    private func navigateToInstruction() {
+    private func navigateToHome() {
         guard let navigationController = navigationController else {
             print("Ошибка: navigationController не найден!")
             return
         }
-        
-        let instructionVC = InstructionViewController()
-        
+
+        let homeVC = HomeViewController()
+
         let transition = CATransition()
         transition.duration = 2.0
         transition.type = .fade
         transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        
+
         DispatchQueue.main.async {
             self.view.window?.layer.add(transition, forKey: kCATransition)
-            navigationController.setViewControllers([instructionVC], animated: false)
+            navigationController.setViewControllers([homeVC], animated: false)
         }
     }
 
-    deinit {
-        debugPrint("SplashViewController deallocated")
-    }
 }
