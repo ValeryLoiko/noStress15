@@ -62,16 +62,16 @@
 		842B55D42D4FAD50008301BE /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		842B55D62D52C16C008301BE /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		845CCC962D5BFDAA00EE0FE1 /* BreathingSessionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingSessionCell.swift; sourceTree = "<group>"; };
-		84621B732D46EC0B0005F339 /* Inhale15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inhale15.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84621B732D46EC0B0005F339 /* noStress15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noStress15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84621B762D46EC0B0005F339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84621B782D46EC0B0005F339 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84621B802D46EC0B0005F339 /* Inhale15.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Inhale15.xcdatamodel; sourceTree = "<group>"; };
 		84621B822D46EC100005F339 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84621B852D46EC100005F339 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84621B872D46EC100005F339 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84621B8C2D46EC110005F339 /* Inhale15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Inhale15Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84621B8C2D46EC110005F339 /* noStress15Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = noStress15Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84621B902D46EC110005F339 /* Inhale15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inhale15Tests.swift; sourceTree = "<group>"; };
-		84621B962D46EC110005F339 /* Inhale15UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Inhale15UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84621B962D46EC110005F339 /* noStress15UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = noStress15UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84621B9A2D46EC110005F339 /* Inhale15UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inhale15UITests.swift; sourceTree = "<group>"; };
 		84621B9C2D46EC110005F339 /* Inhale15UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inhale15UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84829D1C2D4AD2BA0009CC11 /* Animation - 1727784149695.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Animation - 1727784149695.json"; sourceTree = "<group>"; };
@@ -147,9 +147,9 @@
 		84621B742D46EC0B0005F339 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84621B732D46EC0B0005F339 /* Inhale15.app */,
-				84621B8C2D46EC110005F339 /* Inhale15Tests.xctest */,
-				84621B962D46EC110005F339 /* Inhale15UITests.xctest */,
+				84621B732D46EC0B0005F339 /* noStress15.app */,
+				84621B8C2D46EC110005F339 /* noStress15Tests.xctest */,
+				84621B962D46EC110005F339 /* noStress15UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,9 +248,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		84621B722D46EC0B0005F339 /* Inhale15 */ = {
+		84621B722D46EC0B0005F339 /* noStress15 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84621BA02D46EC110005F339 /* Build configuration list for PBXNativeTarget "Inhale15" */;
+			buildConfigurationList = 84621BA02D46EC110005F339 /* Build configuration list for PBXNativeTarget "noStress15" */;
 			buildPhases = (
 				84621B6F2D46EC0B0005F339 /* Sources */,
 				84621B702D46EC0B0005F339 /* Frameworks */,
@@ -260,19 +260,19 @@
 			);
 			dependencies = (
 			);
-			name = Inhale15;
+			name = noStress15;
 			packageProductDependencies = (
 				84621BAA2D46EE830005F339 /* SnapKit */,
 				84829D1F2D4AD64A0009CC11 /* Lottie */,
 				842B55D92D52C359008301BE /* DGCharts */,
 			);
 			productName = Inhale15;
-			productReference = 84621B732D46EC0B0005F339 /* Inhale15.app */;
+			productReference = 84621B732D46EC0B0005F339 /* noStress15.app */;
 			productType = "com.apple.product-type.application";
 		};
-		84621B8B2D46EC110005F339 /* Inhale15Tests */ = {
+		84621B8B2D46EC110005F339 /* noStress15Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84621BA32D46EC110005F339 /* Build configuration list for PBXNativeTarget "Inhale15Tests" */;
+			buildConfigurationList = 84621BA32D46EC110005F339 /* Build configuration list for PBXNativeTarget "noStress15Tests" */;
 			buildPhases = (
 				84621B882D46EC110005F339 /* Sources */,
 				84621B892D46EC110005F339 /* Frameworks */,
@@ -283,14 +283,14 @@
 			dependencies = (
 				84621B8E2D46EC110005F339 /* PBXTargetDependency */,
 			);
-			name = Inhale15Tests;
+			name = noStress15Tests;
 			productName = Inhale15Tests;
-			productReference = 84621B8C2D46EC110005F339 /* Inhale15Tests.xctest */;
+			productReference = 84621B8C2D46EC110005F339 /* noStress15Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		84621B952D46EC110005F339 /* Inhale15UITests */ = {
+		84621B952D46EC110005F339 /* noStress15UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84621BA62D46EC110005F339 /* Build configuration list for PBXNativeTarget "Inhale15UITests" */;
+			buildConfigurationList = 84621BA62D46EC110005F339 /* Build configuration list for PBXNativeTarget "noStress15UITests" */;
 			buildPhases = (
 				84621B922D46EC110005F339 /* Sources */,
 				84621B932D46EC110005F339 /* Frameworks */,
@@ -301,9 +301,9 @@
 			dependencies = (
 				84621B982D46EC110005F339 /* PBXTargetDependency */,
 			);
-			name = Inhale15UITests;
+			name = noStress15UITests;
 			productName = Inhale15UITests;
-			productReference = 84621B962D46EC110005F339 /* Inhale15UITests.xctest */;
+			productReference = 84621B962D46EC110005F339 /* noStress15UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -329,7 +329,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 84621B6E2D46EC0B0005F339 /* Build configuration list for PBXProject "Inhale15" */;
+			buildConfigurationList = 84621B6E2D46EC0B0005F339 /* Build configuration list for PBXProject "noStress15" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -347,9 +347,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84621B722D46EC0B0005F339 /* Inhale15 */,
-				84621B8B2D46EC110005F339 /* Inhale15Tests */,
-				84621B952D46EC110005F339 /* Inhale15UITests */,
+				84621B722D46EC0B0005F339 /* noStress15 */,
+				84621B8B2D46EC110005F339 /* noStress15Tests */,
+				84621B952D46EC110005F339 /* noStress15UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -430,12 +430,12 @@
 /* Begin PBXTargetDependency section */
 		84621B8E2D46EC110005F339 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 84621B722D46EC0B0005F339 /* Inhale15 */;
+			target = 84621B722D46EC0B0005F339 /* noStress15 */;
 			targetProxy = 84621B8D2D46EC110005F339 /* PBXContainerItemProxy */;
 		};
 		84621B982D46EC110005F339 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 84621B722D46EC0B0005F339 /* Inhale15 */;
+			target = 84621B722D46EC0B0005F339 /* noStress15 */;
 			targetProxy = 84621B972D46EC110005F339 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -585,7 +585,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ValeryLoiko.Inhale15;
+				PRODUCT_BUNDLE_IDENTIFIER = ValeryLoiko.noStress15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -612,7 +612,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ValeryLoiko.Inhale15;
+				PRODUCT_BUNDLE_IDENTIFIER = ValeryLoiko.noStress15;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -636,7 +636,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inhale15.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inhale15";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/noStress15.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/noStress15";
 			};
 			name = Debug;
 		};
@@ -656,7 +656,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inhale15.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Inhale15";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/noStress15.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/noStress15";
 			};
 			name = Release;
 		};
@@ -699,7 +699,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84621B6E2D46EC0B0005F339 /* Build configuration list for PBXProject "Inhale15" */ = {
+		84621B6E2D46EC0B0005F339 /* Build configuration list for PBXProject "noStress15" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84621B9E2D46EC110005F339 /* Debug */,
@@ -708,7 +708,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84621BA02D46EC110005F339 /* Build configuration list for PBXNativeTarget "Inhale15" */ = {
+		84621BA02D46EC110005F339 /* Build configuration list for PBXNativeTarget "noStress15" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84621BA12D46EC110005F339 /* Debug */,
@@ -717,7 +717,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84621BA32D46EC110005F339 /* Build configuration list for PBXNativeTarget "Inhale15Tests" */ = {
+		84621BA32D46EC110005F339 /* Build configuration list for PBXNativeTarget "noStress15Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84621BA42D46EC110005F339 /* Debug */,
@@ -726,7 +726,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84621BA62D46EC110005F339 /* Build configuration list for PBXNativeTarget "Inhale15UITests" */ = {
+		84621BA62D46EC110005F339 /* Build configuration list for PBXNativeTarget "noStress15UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84621BA72D46EC110005F339 /* Debug */,
