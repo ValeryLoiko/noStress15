@@ -9,16 +9,26 @@ import Foundation
 
 class SplashViewModel {
     
-    var animationName: String {
-        return "Animation - 1727784149695"
-    }
+    static let animationName = "Animation - 1727784149695"
     
     var onNavigateToInstruction: (() -> Void)?
-    
+    private var splashWorkItem: DispatchWorkItem?
+
     func startSplashTimer() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { [weak self] in
-            debugPrint("Navigating to InstructionVC") 
+        splashWorkItem = DispatchWorkItem { [weak self] in
+            debugPrint("Navigating to InstructionVC")
             self?.onNavigateToInstruction?()
         }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: splashWorkItem!)
+    }
+    
+    func cancelSplashTimer() {
+        splashWorkItem?.cancel()
+    }
+    
+    deinit {
+        debugPrint("SplashViewModel deallocated")
     }
 }
+

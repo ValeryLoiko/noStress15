@@ -1,3 +1,4 @@
+//
 //  SplashViewController.swift
 //  Inhale15
 //
@@ -12,39 +13,22 @@ class SplashViewController: UIViewController {
     
     private let viewModel = SplashViewModel()
     
-    private let accentColor = UIColor(red: 149/255, green: 222/255, blue: 205/255, alpha: 1.0) // #95DECD
-    private let darkGradientStart = UIColor(red: 28/255, green: 28/255, blue: 40/255, alpha: 1.0).cgColor
-    private let darkGradientEnd = UIColor(red: 20/255, green: 20/255, blue: 30/255, alpha: 1.0).cgColor
-    
     private let animationView: LottieAnimationView = {
-        let animation = LottieAnimationView(name: "Animation - 1727784149695")
+        let animation = LottieAnimationView(name: SplashViewModel.animationName)
         animation.contentMode = .scaleAspectFill
         animation.loopMode = .loop
         animation.animationSpeed = 0.5
         return animation
     }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "No Stress 15"
-        label.font = .systemFont(ofSize: 48, weight: .semibold)
-        label.textColor = UIColor(red: 149/255, green: 222/255, blue: 205/255, alpha: 0.95)
-        label.textAlignment = .center
-        label.alpha = 0
-        return label
-    }()
+    private let titleLabel = UIFactory.createLabel(fontSize: 48, weight: .semibold, textColor: ColorPalette.primary)
     
     private let sloganLabel: UILabel = {
-        let label = UILabel()
+        let label = UIFactory.createLabel(fontSize: 16, weight: .light, textColor: ColorPalette.primary.withAlphaComponent(0.75))
         let text = "THE SIZE OF CALM"
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.addAttribute(.kern, value: 5, range: NSRange(location: 0, length: text.count))
-        
         label.attributedText = attributedString
-        label.font = .systemFont(ofSize: 16, weight: .light)
-        label.textColor = UIColor(red: 149/255, green: 222/255, blue: 205/255, alpha: 0.75) // #95DECD с прозрачностью
-        label.textAlignment = .center
-        label.alpha = 0
         return label
     }()
     
@@ -65,9 +49,14 @@ class SplashViewController: UIViewController {
         startAnimation()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.cancelSplashTimer() // ⚠️ Отмена таймера при выходе с экрана
+    }
+
     private func setupBackground() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [darkGradientStart, darkGradientEnd]
+        gradientLayer.colors = [ColorPalette.backgroundDark.cgColor, UIColor.black.cgColor]
         gradientLayer.locations = [0.0, 1.0]
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
@@ -83,7 +72,7 @@ class SplashViewController: UIViewController {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(50) 
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(50)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(20)
         }
@@ -137,5 +126,9 @@ class SplashViewController: UIViewController {
             self.view.window?.layer.add(transition, forKey: kCATransition)
             navigationController.setViewControllers([instructionVC], animated: false)
         }
+    }
+
+    deinit {
+        debugPrint("SplashViewController deallocated")
     }
 }

@@ -11,27 +11,23 @@ import SnapKit
 class BreathingSessionCell: UITableViewCell {
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(white: 1.0, alpha: 0.05)
+        view.backgroundColor = ColorPalette.cellBackground
         view.layer.cornerRadius = 16
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(white: 1.0, alpha: 0.1).cgColor
+        view.layer.borderColor = ColorPalette.border.cgColor
         return view
     }()
     
-    private let dateLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 13, weight: .regular)
-        label.textColor = UIColor(white: 1.0, alpha: 0.6)
-        return label
-    }()
+    private let dateLabel = UIFactory.createLabel(fontSize: 13, textColor: ColorPalette.textGray)
+    private let durationLabel = UIFactory.createLabel(fontSize: 24, weight: .light, textColor: ColorPalette.primary)
     
-    private let durationLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 24, weight: .light) // Чуть уменьшил, чтобы лучше смотрелось
-        label.textColor = UIColor(red: 149/255, green: 222/255, blue: 205/255, alpha: 1.0)
-        return label
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter
     }()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -50,7 +46,7 @@ class BreathingSessionCell: UITableViewCell {
         containerView.addSubview(durationLabel)
         
         containerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 6, left: 16, bottom: 6, right: 16)) // Добавили отступы
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 6, left: 16, bottom: 6, right: 16))
         }
         
         dateLabel.snp.makeConstraints { make in
@@ -58,20 +54,15 @@ class BreathingSessionCell: UITableViewCell {
         }
         
         durationLabel.snp.makeConstraints { make in
-            make.top.equalTo(dateLabel.snp.bottom).offset(4) // Чуть уменьшил расстояние между строками
+            make.top.equalTo(dateLabel.snp.bottom).offset(4)
             make.left.equalToSuperview().offset(12)
-            make.bottom.equalToSuperview().offset(-12) // Отступ снизу, чтобы текст не прилипал
+            make.bottom.equalToSuperview().offset(-12)
         }
     }
     
     func configure(with session: BreathSession) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
-        
-        dateLabel.text = dateFormatter.string(from: session.date ?? Date())
+        dateLabel.text = Self.dateFormatter.string(from: session.date ?? Date())
         durationLabel.text = String(format: "%.0f секунд", session.duration)
     }
 }
-
 

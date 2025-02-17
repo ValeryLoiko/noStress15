@@ -5,7 +5,6 @@
 //  Created by Diana on 29/01/2025.
 //
 
-
 import UIKit
 import SnapKit
 
@@ -16,8 +15,8 @@ class TimerViewController: UIViewController {
     private lazy var backgroundGradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
         layer.colors = [
-            UIColor(red: 28/255.0, green: 28/255.0, blue: 35/255.0, alpha: 1.0).cgColor,
-            UIColor(red: 18/255.0, green: 18/255.0, blue: 24/255.0, alpha: 1.0).cgColor
+            ColorPalette.backgroundDark.cgColor,
+            UIColor.black.cgColor
         ]
         layer.locations = [0.0, 1.0]
         return layer
@@ -25,11 +24,10 @@ class TimerViewController: UIViewController {
     
     private lazy var timerContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(white: 1.0, alpha: 0.05)
+        view.backgroundColor = ColorPalette.cellBackground
         view.layer.cornerRadius = 85
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor(white: 1.0, alpha: 0.1).cgColor
-        
+        view.layer.borderColor = ColorPalette.border.cgColor
         view.addSubview(timerLabel)
         view.addSubview(timerDescriptionLabel)
         
@@ -45,29 +43,14 @@ class TimerViewController: UIViewController {
         return view
     }()
     
-    private let timerLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 72, weight: .light)
-        label.textAlignment = .center
-        label.text = "0"
-        label.textColor = UIColor(red: 149/255, green: 222/255, blue: 205/255, alpha: 1.0)
-        return label
-    }()
-    
-    private let timerDescriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .regular)
-        label.textAlignment = .center
-        label.text = "секунд"
-        label.textColor = UIColor(red: 149/255, green: 222/255, blue: 205/255, alpha: 1.0)
-        return label
-    }()
+    private let timerLabel = UIFactory.createLabel(fontSize: 72, weight: .light, textColor: ColorPalette.primary)
+    private let timerDescriptionLabel = UIFactory.createLabel(fontSize: 14, textColor: ColorPalette.textGray)
     
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.backgroundColor = .clear
         table.separatorStyle = .singleLine
-        table.separatorColor = UIColor(white: 1.0, alpha: 0.1)
+        table.separatorColor = ColorPalette.border
         table.layer.cornerRadius = 20
         table.showsVerticalScrollIndicator = false
         table.delegate = self
@@ -76,15 +59,13 @@ class TimerViewController: UIViewController {
         return table
     }()
     
-    private lazy var startPauseButton: UIButton = {
-        createButton(title: "Старт", action: #selector(startPauseTapped), color: .black)
-    }()
+    private lazy var startPauseButton = UIFactory.createButton(title: "Старт", backgroundColor: ColorPalette.primary)
+    private lazy var fifteenSecButton = UIFactory.createButton(title: "15 сек", backgroundColor: ColorPalette.primary)
+    private lazy var statsButton = UIFactory.createButton(title: "Статистика", backgroundColor: ColorPalette.primary)
     
     private lazy var buttonsStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [
-            startPauseButton,
-            createButton(title: "15 сек", action: #selector(fifteenSecTapped), color: .black),
-            createButton(title: "Статистика", action: #selector(openStatsTapped), color: .black)
+            startPauseButton, fifteenSecButton, statsButton
         ])
         stack.axis = .vertical
         stack.spacing = 16
@@ -97,13 +78,15 @@ class TimerViewController: UIViewController {
         setupUI()
         bindViewModel()
         viewModel.fetchSessions()
+        
+        startPauseButton.addTarget(self, action: #selector(startPauseTapped), for: .touchUpInside)
+        fifteenSecButton.addTarget(self, action: #selector(fifteenSecTapped), for: .touchUpInside)
+        statsButton.addTarget(self, action: #selector(openStatsTapped), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         backgroundGradientLayer.frame = view.bounds
-        viewModel.fetchSessions() // При возврате на экран обновляем данные
-                tableView.reloadData()
     }
     
     private func setupUI() {
@@ -135,20 +118,6 @@ class TimerViewController: UIViewController {
         }
     }
     
-    private func createButton(title: String, action: Selector, color: UIColor) -> UIButton {
-        let button = UIButton(type: .system)
-        button.setTitle(title, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-        button.setTitleColor(UIColor(red: 149/255, green: 222/255, blue: 205/255, alpha: 1.0), for: .normal)
-        button.backgroundColor = color.withAlphaComponent(0.15)
-        button.layer.cornerRadius = 25
-        button.layer.borderWidth = 1
-        button.layer.borderColor = color.withAlphaComponent(0.3).cgColor
-        button.addTarget(self, action: action, for: .touchUpInside)
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        return button
-    }
-    
     private func bindViewModel() {
         viewModel.onUpdate = { [weak self] elapsedTime in
             DispatchQueue.main.async {
@@ -176,17 +145,18 @@ class TimerViewController: UIViewController {
         } else {
             viewModel.startTimer()
             startPauseButton.setTitle("Пауза", for: .normal)
-        }    }
+        }
+    }
     
     @objc private func fifteenSecTapped() {
         viewModel.saveSessionAndStart15Sec()
     }
     
     @objc private func openStatsTapped() {
-           let statsViewController = StatsViewController()
-           statsViewController.delegate = self  // Устанавливаем делегата
-           navigationController?.pushViewController(statsViewController, animated: true)
-       }
+        let statsViewController = StatsViewController()
+        statsViewController.delegate = self
+        navigationController?.pushViewController(statsViewController, animated: true)
+    }
 }
 
 // MARK: - StatsViewControllerDelegate
@@ -213,3 +183,4 @@ extension TimerViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
+
