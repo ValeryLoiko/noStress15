@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		842283552D6402F8003566F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842283542D6402F8003566F3 /* HomeViewController.swift */; };
+		842283572D654CEA003566F3 /* yoga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 842283562D654CE9003566F3 /* yoga.mp3 */; };
+		842283592D654D56003566F3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842283582D654D56003566F3 /* SettingsViewModel.swift */; };
+		8422835B2D654DA4003566F3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422835A2D654DA4003566F3 /* SettingsViewController.swift */; };
 		842B55CC2D4F7E6A008301BE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CA2D4F7E6A008301BE /* Model.xcdatamodeld */; };
 		842B55CF2D4F7F32008301BE /* BreathSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CD2D4F7F32008301BE /* BreathSession+CoreDataClass.swift */; };
 		842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */; };
@@ -57,6 +60,9 @@
 
 /* Begin PBXFileReference section */
 		842283542D6402F8003566F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		842283562D654CE9003566F3 /* yoga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yoga.mp3; sourceTree = "<group>"; };
+		842283582D654D56003566F3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		8422835A2D654DA4003566F3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		842B55CB2D4F7E6A008301BE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		842B55CD2D4F7F32008301BE /* BreathSession+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreathSession+CoreDataClass.swift"; sourceTree = "<group>"; };
 		842B55CE2D4F7F32008301BE /* BreathSession+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BreathSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 				84829D212D4ADEFC0009CC11 /* SplashViewModel.swift */,
 				842B55D42D4FAD50008301BE /* TimerViewModel.swift */,
 				842B55D62D52C16C008301BE /* StatsViewModel.swift */,
+				842283582D654D56003566F3 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -235,6 +242,7 @@
 				84B246632D4AC68C009A3963 /* StatsViewController.swift */,
 				849C397F2D56AD69005A3550 /* DonateViewController.swift */,
 				842283542D6402F8003566F3 /* HomeViewController.swift */,
+				8422835A2D654DA4003566F3 /* SettingsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 		84B2465C2D4AC566009A3963 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				842283562D654CE9003566F3 /* yoga.mp3 */,
 				84829D1C2D4AD2BA0009CC11 /* Animation - 1727784149695.json */,
 				84621B842D46EC100005F339 /* LaunchScreen.storyboard */,
 			);
@@ -364,6 +373,7 @@
 			files = (
 				84621B862D46EC100005F339 /* LaunchScreen.storyboard in Resources */,
 				84621B832D46EC100005F339 /* Assets.xcassets in Resources */,
+				842283572D654CEA003566F3 /* yoga.mp3 in Resources */,
 				84829D1D2D4AD2BA0009CC11 /* Animation - 1727784149695.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +412,7 @@
 				84829D242D4C2C700009CC11 /* InstructionViewModel.swift in Sources */,
 				842B55D72D52C16C008301BE /* StatsViewModel.swift in Sources */,
 				84899D682D63F63600128432 /* ColorPalette.swift in Sources */,
+				8422835B2D654DA4003566F3 /* SettingsViewController.swift in Sources */,
 				842B55CC2D4F7E6A008301BE /* Model.xcdatamodeld in Sources */,
 				84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */,
 				842283552D6402F8003566F3 /* HomeViewController.swift in Sources */,
@@ -409,6 +420,7 @@
 				842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */,
 				84829D222D4ADEFC0009CC11 /* SplashViewModel.swift in Sources */,
 				849C39802D56AD69005A3550 /* DonateViewController.swift in Sources */,
+				842283592D654D56003566F3 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

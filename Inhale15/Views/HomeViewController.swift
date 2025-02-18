@@ -86,9 +86,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func openSettings() {
-        let vc = UIViewController()
-        vc.view.backgroundColor = ColorPalette.backgroundDark
-        vc.title = "Настройки"
+        let vc = SettingsViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
