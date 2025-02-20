@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  noStress15
+
+  Created by Diana on 20/02/2025.
+  
+*/
+"hello" = "Привет!";
+"start_button" = "Старт";

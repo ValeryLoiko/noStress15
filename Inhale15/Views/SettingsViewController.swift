@@ -41,7 +41,8 @@ class SettingsViewController: UIViewController {
     }()
     
     private lazy var linkedInButton: UIButton = {
-        let button = UIFactory.createButton(title: "🔗 LinkedIn", backgroundColor: ColorPalette.primary)
+//        let button = UIFactory.createButton(title: "🔗 LinkedIn", backgroundColor: ColorPalette.primary)
+        let button = UIFactory.createButton(title: NSLocalizedString("hello", comment: ""), backgroundColor: ColorPalette.primary)
         button.addTarget(self, action: #selector(copyLinkedIn), for: .touchUpInside)
         return button
     }()
