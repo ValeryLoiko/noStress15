@@ -7,174 +7,179 @@
 
 import UIKit
 import SnapKit
+import StoreKit
 
 class DonateViewController: UIViewController {
     
-    private let containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemBackground
-        view.layer.cornerRadius = 20
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 0, height: 2)
-        view.layer.shadowRadius = 6
-        view.layer.shadowOpacity = 0.1
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    private var products: [SKProduct] = []
+    
+    // Заголовок
+    private let titleLabel: UILabel = UIFactory.createLabel(
+        fontSize: 24,
+        weight: .bold,
+        textColor: .white,
+        alignment: .center
+    )
+    
+    // Описание
+    private let descriptionLabel: UILabel = UIFactory.createLabel(
+        fontSize: 16,
+        textColor: .lightGray,
+        alignment: .center,
+        lines: 0
+    )
+    
+    // StackView для кнопок донатов
+    private let donateStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 15
+        stackView.alignment = .center
+        return stackView
     }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Поддержите проект"
-        label.font = .systemFont(ofSize: 24, weight: .bold)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let usdtAddressLabel: UILabel = {
-        let label = UILabel()
-        label.text = "USDT (TRC20)"
-        label.font = .systemFont(ofSize: 16, weight: .medium)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let addressTextField: UITextField = {
-        let textField = UITextField()
-        textField.text = "TRC20USDT_ADDRESS_HERE"
-        textField.isUserInteractionEnabled = false
-        textField.textAlignment = .center
-        textField.font = .systemFont(ofSize: 14)
-        textField.backgroundColor = .systemGray6
-        textField.layer.cornerRadius = 8
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
-    
-    private let copyButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Копировать адрес", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 12
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    private let thankYouLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Спасибо за вашу поддержку! ❤️"
-        label.font = .systemFont(ofSize: 16)
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+    // Кнопка закрытия
     private let closeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
-        button.tintColor = .systemGray
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Закрыть", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupActions()
+        fetchProducts()
+        SKPaymentQueue.default().add(self)
     }
     
     private func setupUI() {
-        view.backgroundColor = .systemBackground.withAlphaComponent(0.95)
+        view.backgroundColor = .black
         
-        view.addSubview(containerView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(usdtAddressLabel)
-        containerView.addSubview(addressTextField)
-        containerView.addSubview(copyButton)
-        containerView.addSubview(thankYouLabel)
+        titleLabel.text = "Поддержите проект"
+        descriptionLabel.text = "Ваши донаты помогают нам развивать приложение и добавлять новые функции. Спасибо за поддержку! ❤️"
+
+        view.addSubview(titleLabel)
+        view.addSubview(descriptionLabel)
+        view.addSubview(donateStackView)
         view.addSubview(closeButton)
         
-        containerView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.leading.equalToSuperview().offset(24)
-            make.trailing.equalToSuperview().offset(-24)
-            make.height.lessThanOrEqualTo(view.snp.height).multipliedBy(0.7)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.centerX.equalToSuperview()
+        }
+        
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.left.right.equalToSuperview().inset(20)
+        }
+        
+        donateStackView.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(30)
+            make.centerX.equalToSuperview()
         }
         
         closeButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(16)
-            make.trailing.equalToSuperview().offset(-20)
-            make.size.equalTo(36)
-        }
-        
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(containerView).offset(32)
-            make.leading.equalTo(containerView).offset(20)
-            make.trailing.equalTo(containerView).offset(-20)
-        }
-        
-        usdtAddressLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(24)
-            make.leading.equalTo(containerView).offset(20)
-            make.trailing.equalTo(containerView).offset(-20)
-        }
-        
-        addressTextField.snp.makeConstraints { make in
-            make.top.equalTo(usdtAddressLabel.snp.bottom).offset(12)
-            make.leading.equalTo(containerView).offset(20)
-            make.trailing.equalTo(containerView).offset(-20)
-            make.height.equalTo(44)
-        }
-        
-        copyButton.snp.makeConstraints { make in
-            make.top.equalTo(addressTextField.snp.bottom).offset(20)
-            make.centerX.equalTo(containerView)
-            make.width.equalTo(200)
-            make.height.equalTo(44)
-        }
-        
-        thankYouLabel.snp.makeConstraints { make in
-            make.top.equalTo(copyButton.snp.bottom).offset(24)
-            make.leading.equalTo(containerView).offset(20)
-            make.trailing.equalTo(containerView).offset(-20)
-            make.bottom.equalTo(containerView).offset(-32)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.centerX.equalToSuperview()
         }
     }
     
-    private func setupActions() {
-        copyButton.addTarget(self, action: #selector(copyAddress), for: .touchUpInside)
-        closeButton.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
+    private func fetchProducts() {
+        let productIdentifiers: Set<String> = [
+            "com.nostress15.donation.small",
+            "com.nostress15.donation.medium",
+            "com.nostress15.donation.large",
+            "com.nostress15.donation.extra"
+        ]
+        
+        let request = SKProductsRequest(productIdentifiers: productIdentifiers)
+        request.delegate = self
+        request.start()
     }
     
     @objc private func closeTapped() {
-        dismiss(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
-    @objc private func copyAddress() {
-        UIPasteboard.general.string = addressTextField.text
-        
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-        
-        // Анимация копирования
-        UIView.animate(withDuration: 0.2) {
-            self.copyButton.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-        } completion: { _ in
-            UIView.animate(withDuration: 0.2) {
-                self.copyButton.transform = .identity
-            }
-        }
-        
-        // Показываем уведомление о копировании
-        let originalTitle = copyButton.title(for: .normal)
-        copyButton.setTitle("Скопировано! ✓", for: .normal)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.copyButton.setTitle(originalTitle, for: .normal)
-        }
+    @objc private func donateTapped(_ sender: UIButton) {
+        guard let product = products[safe: sender.tag] else { return }
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(payment)
     }
 }
 
+extension DonateViewController: SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print("🔹 Загруженные продукты: \(response.products)")
+
+        products = response.products.sorted(by: { $0.price.doubleValue < $1.price.doubleValue })
+        
+        DispatchQueue.main.async {
+            self.donateStackView.arrangedSubviews.forEach { $0.removeFromSuperview() } // Очищаем перед добавлением
+            
+            for (index, product) in self.products.enumerated() {
+                let button = UIFactory.createButton(
+                    title: "\(product.localizedTitle) – \(product.priceLocale.currencySymbol ?? "$")\(product.price)",
+                    backgroundColor: .systemBlue
+                )
+                button.tag = index
+                button.addTarget(self, action: #selector(self.donateTapped(_:)), for: .touchUpInside)
+                
+                self.donateStackView.addArrangedSubview(button)
+            }
+        }
+        print("🔹 Загруженные продукты: \(response.products)")
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchased:
+                showThankYouAnimation()
+                SKPaymentQueue.default().finishTransaction(transaction)
+            case .failed:
+                showErrorAlert()
+                SKPaymentQueue.default().finishTransaction(transaction)
+            default:
+                break
+            }
+        }
+    }
+    
+    private func showThankYouAnimation() {
+        let heartLabel = UILabel()
+        heartLabel.text = "❤️"
+        heartLabel.font = UIFont.systemFont(ofSize: 60)
+        heartLabel.alpha = 0.0
+        view.addSubview(heartLabel)
+        
+        heartLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            heartLabel.alpha = 1.0
+        }) { _ in
+            UIView.animate(withDuration: 1.0, animations: {
+                heartLabel.alpha = 0.0
+            }) { _ in
+                heartLabel.removeFromSuperview()
+            }
+        }
+    }
+    
+    private func showErrorAlert() {
+        let alert = UIAlertController(title: "Ошибка", message: "Что-то пошло не так. Попробуйте ещё раз.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+}
+
+extension Array {
+    subscript(safe index: Int) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
