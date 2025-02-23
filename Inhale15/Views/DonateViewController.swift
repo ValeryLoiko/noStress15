@@ -41,7 +41,7 @@ class DonateViewController: UIViewController {
     // Кнопка закрытия
     private let closeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Закрыть", for: .normal)
+        button.setTitle(LabelText.cleanButton.text, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
         return button
@@ -57,8 +57,8 @@ class DonateViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .black
         
-        titleLabel.text = "Поддержите проект"
-        descriptionLabel.text = "Ваши донаты помогают нам развивать приложение и добавлять новые функции. Спасибо за поддержку! ❤️"
+        titleLabel.text = LabelText.donateTitle.text
+        descriptionLabel.text = LabelText.donateText.text
 
         view.addSubview(titleLabel)
         view.addSubview(descriptionLabel)
@@ -172,7 +172,7 @@ extension DonateViewController: SKProductsRequestDelegate, SKPaymentTransactionO
     }
     
     private func showErrorAlert() {
-        let alert = UIAlertController(title: "Ошибка", message: "Что-то пошло не так. Попробуйте ещё раз.", preferredStyle: .alert)
+        let alert = UIAlertController(title: LabelText.donateWarning.text, message: LabelText.donateErrortext.text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }

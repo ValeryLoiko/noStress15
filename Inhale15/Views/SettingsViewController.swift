@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController {
     }()
 
     private lazy var languageButton: UIButton = {
-        UIFactory.createButton(title: "🌍 Язык", backgroundColor: ColorPalette.primary)
+        UIFactory.createButton(title: "🌍  \(LabelText.homeLanguage.text)", backgroundColor: ColorPalette.primary)
     }()
     
     private lazy var termsButton: UIButton = {
@@ -35,14 +35,13 @@ class SettingsViewController: UIViewController {
     }()
     
     private lazy var donateButton: UIButton = {
-        let button = UIFactory.createButton(title: "💖 Донаты", backgroundColor: ColorPalette.primary.withAlphaComponent(0.7))
+        let button = UIFactory.createButton(title: "💖 \(LabelText.homeDonate.text)", backgroundColor: ColorPalette.primary.withAlphaComponent(0.7))
         button.addTarget(self, action: #selector(openDonations), for: .touchUpInside)
         return button
     }()
     
     private lazy var linkedInButton: UIButton = {
-//        let button = UIFactory.createButton(title: "🔗 LinkedIn", backgroundColor: ColorPalette.primary)
-        let button = UIFactory.createButton(title: NSLocalizedString("hello", comment: ""), backgroundColor: ColorPalette.primary)
+        let button = UIFactory.createButton(title: "🔗 LinkedIn", backgroundColor: ColorPalette.primary)
         button.addTarget(self, action: #selector(copyLinkedIn), for: .touchUpInside)
         return button
     }()
@@ -66,7 +65,7 @@ class SettingsViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(buttonsStackView)
         
-        titleLabel.text = "Настройки"
+        titleLabel.text = LabelText.homeSettings.text
         titleLabel.textAlignment = .center
         
         titleLabel.snp.makeConstraints { make in
@@ -83,13 +82,13 @@ class SettingsViewController: UIViewController {
 
     @objc private func toggleMusic() {
         viewModel.togglePlayPause()
-        let newTitle = viewModel.isPlaying ? "🎵 Музыка: Pause" : "🎵 Музыка: Play"
+        let newTitle = viewModel.isPlaying ? "🎵 \(LabelText.musicButton.text): Pause" : "🎵 \(LabelText.musicButton.text): Play"
         musicButton.setTitle(newTitle, for: .normal)
     }
 
     @objc private func resetMusic() {
         viewModel.resetAudio()
-        musicButton.setTitle("🎵 Музыка: Pause", for: .normal)
+        musicButton.setTitle("🎵 \(LabelText.musicButton.text): Pause", for: .normal)
     }
     
     @objc private func openDonations() {
@@ -99,7 +98,7 @@ class SettingsViewController: UIViewController {
 
     @objc private func copyLinkedIn() {
         viewModel.copyLinkedInURL()
-        let alert = UIAlertController(title: "Ссылка скопирована!", message: "Ссылка на LinkedIn теперь в буфере обмена.", preferredStyle: .alert)
+        let alert = UIAlertController(title: LabelText.linkKopped.text, message: LabelText.linkMessage.text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }

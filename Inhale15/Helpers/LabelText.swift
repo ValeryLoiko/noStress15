@@ -11,6 +11,9 @@ enum LabelText: String {
     case instructionText = "instruction_text"
     
     case donateTitle = "donate_title"
+    case donateText = "donate_text"
+    case donateWarning = "donate_warning"
+    case donateErrortext = "donate_warning_text"
     case usdtLabel = "usdt_label"
     case copyButton = "copy_button"
     case thankYou = "thank_you"
@@ -19,10 +22,20 @@ enum LabelText: String {
     case homeInstruction = "home_instruction"
     case homeTimer = "home_timer"
     case homeStats = "home_stats"
+    case homeLanguage = "home_language"
     case homeSettings = "home_settings"
+    case homeDonate = "home_donate"
     case appName = "app_name"
-
+    
     case nextButton = "next_button"
+    case startButton = "start_button"
+    case pauseButton = "pause_button"
+    case musicButton = "musicButton" 
+    case statisticButton = "statistic_button"
+    case sec15Button = "15sec_button"
+    case cleanButton = "clean_button"
+    case linkKopped = "link_coppied"
+    case linkMessage = "link_message"
 
     case secondsLabel = "seconds_label"
 

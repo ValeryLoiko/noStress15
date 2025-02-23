@@ -13,19 +13,19 @@ class HomeViewController: UIViewController {
     private let titleLabel = UIFactory.createLabel(fontSize: 32, weight: .bold, textColor: ColorPalette.primary)
     
     private lazy var instructionButton: UIButton = {
-        UIFactory.createButton(title: "📖 Инструкция", backgroundColor: ColorPalette.primary)
+        UIFactory.createButton(title: "📖 \(LabelText.homeInstruction.text)", backgroundColor: ColorPalette.primary)
     }()
     
     private lazy var timerButton: UIButton = {
-        UIFactory.createButton(title: "⏱ Таймер", backgroundColor: ColorPalette.primary)
+        UIFactory.createButton(title: "⏱ \(LabelText.homeTimer.text)", backgroundColor: ColorPalette.primary)
     }()
     
     private lazy var statsButton: UIButton = {
-        UIFactory.createButton(title: "📊 Статистика", backgroundColor: ColorPalette.primary)
+        UIFactory.createButton(title: "📊 \(LabelText.homeStats.text)", backgroundColor: ColorPalette.primary)
     }()
     
     private lazy var settingsButton: UIButton = {
-        UIFactory.createButton(title: "⚙️ Настройки", backgroundColor: ColorPalette.primary.withAlphaComponent(0.7))
+        UIFactory.createButton(title: "⚙️ \(LabelText.homeSettings.text)", backgroundColor: ColorPalette.primary.withAlphaComponent(0.7))
     }()
     
     private lazy var buttonsStackView: UIStackView = {

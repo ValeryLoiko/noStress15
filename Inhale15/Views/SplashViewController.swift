@@ -71,7 +71,7 @@ class SplashViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        titleLabel.text = "no Stress 15"
+        titleLabel.text = LabelText.appName.text
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(50)
             make.centerX.equalToSuperview()

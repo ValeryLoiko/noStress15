@@ -31,10 +31,10 @@ class StatsViewController: UIViewController {
     private let averageLabel = UIFactory.createLabel(fontSize: 20, weight: .medium, textColor: ColorPalette.primary)
     private let recordLabel = UIFactory.createLabel(fontSize: 20, weight: .medium, textColor: ColorPalette.primary)
     private let lineChartView = LineChartView()
-    private let periodSegmentedControl = UISegmentedControl(items: ["День", "Неделя", "Месяц"])
+    private let periodSegmentedControl = UISegmentedControl(items: [LabelText.statsDay.text, LabelText.statsWeek.text, LabelText.statsMonth.text])
 
     private lazy var clearHistoryButton: UIButton = {
-        let button = UIFactory.createButton(title: "Очистить историю", backgroundColor: ColorPalette.primary.withAlphaComponent(0.2))
+        let button = UIFactory.createButton(title: LabelText.cleanButton.text, backgroundColor: ColorPalette.primary.withAlphaComponent(0.2))
         button.addTarget(self, action: #selector(clearHistoryTapped), for: .touchUpInside)
         return button
     }()
@@ -120,8 +120,8 @@ class StatsViewController: UIViewController {
         let avgDuration = viewModel.getAverageDuration(for: period)
         let recordDuration = viewModel.getRecordDuration(for: period)
 
-        averageLabel.text = "Средняя длительность: \(formatTime(avgDuration))"
-        recordLabel.text = "Рекорд: \(formatTime(recordDuration))"
+        averageLabel.text = "\(LabelText.averageDuration.text): \(formatTime(avgDuration))"
+        recordLabel.text = "\(LabelText.recordLabel.text): \(formatTime(recordDuration))"
         
         updateChart(with: period)
     }
@@ -133,7 +133,7 @@ class StatsViewController: UIViewController {
             ChartDataEntry(x: Double(index + 1), y: session.duration)
         }
 
-        let dataSet = LineChartDataSet(entries: entries, label: "Сессии")
+        let dataSet = LineChartDataSet(entries: entries, label: LabelText.sessionsLabel.text)
         dataSet.colors = [ColorPalette.primary]
         dataSet.circleColors = [ColorPalette.primary]
         dataSet.circleRadius = 5
@@ -147,7 +147,7 @@ class StatsViewController: UIViewController {
 
 
     private func formatTime(_ duration: Double) -> String {
-        return duration >= 60 ? "\(Int(duration) / 60) мин \(Int(duration) % 60) сек" : "\(Int(duration)) сек"
+        return duration >= 60 ? "\(Int(duration) / 60) \(LabelText.minutesLabel.text) \(Int(duration) % 60) \(LabelText.minutesLabel.text)" : "\(Int(duration)) \(LabelText.secondsLabel.text)"
     }
 
     @objc private func periodChanged(_ sender: UISegmentedControl) {

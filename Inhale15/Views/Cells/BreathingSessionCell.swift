@@ -62,7 +62,7 @@ class BreathingSessionCell: UITableViewCell {
     
     func configure(with session: BreathSession) {
         dateLabel.text = Self.dateFormatter.string(from: session.date ?? Date())
-        durationLabel.text = String(format: "%.0f секунд", session.duration)
+        durationLabel.text = String(format: "%.0f", session.duration)
     }
 }
 

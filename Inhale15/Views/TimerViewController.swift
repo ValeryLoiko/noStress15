@@ -59,9 +59,9 @@ class TimerViewController: UIViewController {
         return table
     }()
     
-    private lazy var startPauseButton = UIFactory.createButton(title: "Старт", backgroundColor: ColorPalette.primary)
-    private lazy var fifteenSecButton = UIFactory.createButton(title: "15 сек", backgroundColor: ColorPalette.primary)
-    private lazy var statsButton = UIFactory.createButton(title: "Статистика", backgroundColor: ColorPalette.primary)
+    private lazy var startPauseButton = UIFactory.createButton(title: LabelText.startButton.text, backgroundColor: ColorPalette.primary)
+    private lazy var fifteenSecButton = UIFactory.createButton(title: LabelText.sec15Button.text, backgroundColor: ColorPalette.primary)
+    private lazy var statsButton = UIFactory.createButton(title: LabelText.statisticButton.text, backgroundColor: ColorPalette.primary)
     
     private lazy var buttonsStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [
@@ -141,10 +141,10 @@ class TimerViewController: UIViewController {
     @objc private func startPauseTapped() {
         if viewModel.isTimerRunning {
             viewModel.pauseTimer()
-            startPauseButton.setTitle("Старт", for: .normal)
+            startPauseButton.setTitle(LabelText.startButton.text, for: .normal)
         } else {
             viewModel.startTimer()
-            startPauseButton.setTitle("Пауза", for: .normal)
+            startPauseButton.setTitle(LabelText.pauseButton.text, for: .normal)
         }
     }
     

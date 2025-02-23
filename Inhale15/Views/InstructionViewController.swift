@@ -15,7 +15,7 @@ class InstructionViewController: UIViewController {
     private let instructionLabel = UIFactory.createLabel(fontSize: 17, textColor: .white, alignment: .left, lines: 0)
     
     private lazy var nextButton: UIButton = {
-        let button = UIFactory.createButton(title: "Далее", backgroundColor: ColorPalette.primary)
+        let button = UIFactory.createButton(title: LabelText.nextButton.text, backgroundColor: ColorPalette.primary)
         button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         return button
     }()

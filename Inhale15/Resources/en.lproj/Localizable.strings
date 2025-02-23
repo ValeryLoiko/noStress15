@@ -6,5 +6,43 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "How to perform breathing exercises?";
+"instruction_text"  = "1. Take a deep breath, fill your lungs completely.\n2. Exhale slowly through your mouth, but not completely.\n3. Repeat 30 deep inhalations and exhalations.\n4. After the 30th exhalation, hold your breath for as long as possible.\n5. Then take a deep breath and hold it for 15 seconds.\n6. Exhale 😊 and repeat the entire cycle 3 times.\n\n💡 Tip: Do the exercise in a comfortable position, either sitting or lying down.";
+
+"donate_title"      = "Support the Project";
+"donate_text"       = "Your donations help us develop the app and add new features. Thank you for your support! ❤️";
+"donate_warning"    = "error";
+"donate_warning_text" = "Something went wrong. Try again.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Copy";
+"thank_you"         = "Thank you!";
+"copied_text"       = "Link copied";
+
+"home_instruction"  = "Instructions";
+"home_timer"        = "Practice";
+"home_stats"        = "Statistics";
+"home_language"     = "Language";
+"home_settings"     = "Settings";
+"home_donate"       = "Donations";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Next";
+"startButton"       = "Start";
+"pauseButton"       = "Pause";
+"musicButton"       = "Music";
+"statisticButton"   = "Statistics";
+"sec15Button"       = "15 sec";
+"clean_button"      = "Clear History";
+"link_coppied"      = "Link copied";
+"link_message"      = "LinkedIn link on clipboard.";
+
+"seconds_label"     = "seconds";
+
+"stats_day"         = "Day";
+"stats_week"        = "Week";
+"stats_month"       = "Month";
+"clear_history"     = "Clear History";
+"average_duration"  = "Average Duration";
+"record_label"      = "Record";
+"sessions_label"    = "Sessions";
+"minutes_label"     = "min";
