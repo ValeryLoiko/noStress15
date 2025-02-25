@@ -30,11 +30,11 @@
 "app_name"          = "no Stress 15";
 
 "next_button"       = "Далее";
-"startButton"       = "Начать";
+"start_button"       = "Начать";
 "pauseButton"       = "Пауза";
 "musicButton"       = "Музыка";
-"statisticButton"   = "Статистика";
-"sec15Button"       = "15 сек";
+"statistic_button"   = "Статистика";
+"15sec_button"       = "15 сек";
 "clean_button"      = "Очистить историю";
 "link_coppied"      = "Ссылка скопирована!";
 "link_message"      = "Ссылка на LinkedIn  в буфере обмена.";

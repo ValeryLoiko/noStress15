@@ -27,11 +27,11 @@
 "app_name"          = "no Stress 15";
 
 "next_button"       = "Next";
-"startButton"       = "Start";
+"start_button"       = "Start";
 "pauseButton"       = "Pause";
 "musicButton"       = "Music";
-"statisticButton"   = "Statistics";
-"sec15Button"       = "15 sec";
+"statistic_button"   = "Statistics";
+"15sec_button"       = "15 sec";
 "clean_button"      = "Clear History";
 "link_coppied"      = "Link copied";
 "link_message"      = "LinkedIn link on clipboard.";
