@@ -15,16 +15,16 @@ class SettingsViewController: UIViewController {
     private let titleLabel = UIFactory.createLabel(fontSize: 32, weight: .bold, textColor: ColorPalette.primary)
     
     private lazy var musicButton: UIButton = {
-        let button = UIFactory.createButton(title: "🎵 Музыка: Play", backgroundColor: ColorPalette.primary)
+        let button = UIFactory.createButton(title: "🎵 \(LabelText.musicButton.text): Play", backgroundColor: ColorPalette.primary)
         button.addTarget(self, action: #selector(toggleMusic), for: .touchUpInside)
         return button
     }()
 
-    private lazy var resetMusicButton: UIButton = {
-        let button = UIFactory.createButton(title: "🔄 Начать заново", backgroundColor: ColorPalette.primary.withAlphaComponent(0.7))
-        button.addTarget(self, action: #selector(resetMusic), for: .touchUpInside)
-        return button
-    }()
+//    private lazy var resetMusicButton: UIButton = {
+//        let button = UIFactory.createButton(title: "🔄 Начать заново", backgroundColor: ColorPalette.primary.withAlphaComponent(0.7))
+//        button.addTarget(self, action: #selector(resetMusic), for: .touchUpInside)
+//        return button
+//    }()
 
     private lazy var languageButton: UIButton = {
         UIFactory.createButton(title: "🌍  \(LabelText.homeLanguage.text)", backgroundColor: ColorPalette.primary)
@@ -47,7 +47,7 @@ class SettingsViewController: UIViewController {
     }()
 
     private lazy var buttonsStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [musicButton, resetMusicButton, languageButton, termsButton, donateButton, linkedInButton])
+        let stack = UIStackView(arrangedSubviews: [musicButton, languageButton, termsButton, donateButton, linkedInButton])
         stack.axis = .vertical
         stack.spacing = 16
         stack.distribution = .fillEqually
@@ -86,10 +86,10 @@ class SettingsViewController: UIViewController {
         musicButton.setTitle(newTitle, for: .normal)
     }
 
-    @objc private func resetMusic() {
-        viewModel.resetAudio()
-        musicButton.setTitle("🎵 \(LabelText.musicButton.text): Pause", for: .normal)
-    }
+//    @objc private func resetMusic() {
+//        viewModel.resetAudio()
+//        musicButton.setTitle("🎵 \(LabelText.musicButton.text): Pause", for: .normal)
+//    }
     
     @objc private func openDonations() {
         let vc = DonateViewController()

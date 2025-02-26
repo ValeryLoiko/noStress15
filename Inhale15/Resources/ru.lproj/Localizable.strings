@@ -31,8 +31,8 @@
 
 "next_button"       = "Далее";
 "start_button"       = "Начать";
-"pauseButton"       = "Пауза";
-"musicButton"       = "Музыка";
+"pause_button"       = "Пауза";
+"music_button"       = "Музыка";
 "statistic_button"   = "Статистика";
 "15sec_button"       = "15 сек";
 "clean_button"      = "Очистить историю";

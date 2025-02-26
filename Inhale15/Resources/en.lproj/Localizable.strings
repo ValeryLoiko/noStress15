@@ -28,8 +28,8 @@
 
 "next_button"       = "Next";
 "start_button"       = "Start";
-"pauseButton"       = "Pause";
-"musicButton"       = "Music";
+"pause_button"       = "Pause";
+"music_button"       = "Music";
 "statistic_button"   = "Statistics";
 "15sec_button"       = "15 sec";
 "clean_button"      = "Clear History";

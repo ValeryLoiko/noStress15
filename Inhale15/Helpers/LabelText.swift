@@ -30,7 +30,7 @@ enum LabelText: String {
     case nextButton = "next_button"
     case startButton = "start_button"
     case pauseButton = "pause_button"
-    case musicButton = "musicButton" 
+    case musicButton = "music_button"
     case statisticButton = "statistic_button"
     case sec15Button = "15sec_button"
     case cleanButton = "clean_button"
