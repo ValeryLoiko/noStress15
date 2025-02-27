@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "Miten suorittaa hengitysharjoituksia?";
+"instruction_text"  = "1. Hengitä syvään ja täytä keuhkot kokonaan.\n2. Hengitä hitaasti ulos suun kautta, mutta ei kokonaan.\n3. Toista 30 syvää sisään- ja uloshengitystä.\n4. 30. uloshengityksen jälkeen pidätä hengitystä niin kauan kuin mahdollista.\n5. Hengitä sitten syvään sisään ja pidätä hengitystä 15 sekuntia.\n6. Hengitä ulos 😊 ja toista koko sykli 3 kertaa.\n\n💡 Vinkki: Suorita harjoitus mukavassa asennossa, joko istuen tai maaten.";
+
+"donate_title"      = "Tue projektia";
+"donate_text"       = "Lahjoituksesi auttavat meitä kehittämään sovellusta ja lisäämään uusia ominaisuuksia. Kiitos tuestasi! ❤️";
+"donate_warning"    = "virhe";
+"donate_warning_text" = "Jokin meni pieleen. Yritä uudelleen.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Kopioi";
+"thank_you"         = "Kiitos!";
+"copied_text"       = "Linkki kopioitu";
+
+"home_instruction"  = "Ohjeet";
+"home_timer"        = "Harjoitus";
+"home_stats"        = "Tilastot";
+"home_language"     = "Kieli";
+"home_settings"     = "Asetukset";
+"home_donate"       = "Lahjoitukset";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Seuraava";
+"start_button"      = "Aloita";
+"pause_button"      = "Tauko";
+"music_button"      = "Musiikki";
+"statistic_button"  = "Tilastot";
+"15sec_button"      = "15 sek";
+"clean_button"      = "Tyhjennä historia";
+"link_coppied"      = "Linkki kopioitu";
+"link_message"      = "LinkedIn-linkki kopioitu leikepöydälle.";
+
+"seconds_label"     = "sekuntia";
+
+"stats_day"         = "Päivä";
+"stats_week"        = "Viikko";
+"stats_month"       = "Kuukausi";
+"clear_history"     = "Tyhjennä historia";
+"average_duration"  = "Keskimääräinen kesto";
+"record_label"      = "Ennätys";
+"sessions_label"    = "Istunnot";
+"minutes_label"     = "min";
+
