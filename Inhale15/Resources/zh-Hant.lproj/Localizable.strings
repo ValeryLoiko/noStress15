@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "如何進行呼吸練習？";
+"instruction_text"  = "1. 深吸一口氣，完全填滿肺部。\n2. 透過嘴巴慢慢吐氣，但不要完全吐盡。\n3. 重複30次深呼吸（吸氣與吐氣）。\n4. 在第30次吐氣後，盡可能長時間屏住呼吸。\n5. 然後深吸一口氣，屏住呼吸15秒。\n6. 吐氣 😊 並重複整個循環3次。\n\n💡 提示：請在舒適的姿勢下進行練習，可以選擇坐姿或躺姿。";
+
+"donate_title"      = "支持本項目";
+"donate_text"       = "您的捐款幫助我們開發應用程式並新增更多功能。感謝您的支持！❤️";
+"donate_warning"    = "錯誤";
+"donate_warning_text" = "發生錯誤，請再試一次。";
+"usdt_label"        = "USDT";
+"copy_button"       = "複製";
+"thank_you"         = "謝謝！";
+"copied_text"       = "連結已複製";
+
+"home_instruction"  = "說明";
+"home_timer"        = "練習";
+"home_stats"        = "統計";
+"home_language"     = "語言";
+"home_settings"     = "設定";
+"home_donate"       = "捐款";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "下一步";
+"start_button"      = "開始";
+"pause_button"      = "暫停";
+"music_button"      = "音樂";
+"statistic_button"  = "統計";
+"15sec_button"      = "15秒";
+"clean_button"      = "清除歷史";
+"link_coppied"      = "連結已複製";
+"link_message"      = "LinkedIn 連結已複製到剪貼簿。";
+
+"seconds_label"     = "秒";
+
+"stats_day"         = "日";
+"stats_week"        = "週";
+"stats_month"       = "月";
+"clear_history"     = "清除歷史";
+"average_duration"  = "平均時長";
+"record_label"      = "紀錄";
+"sessions_label"    = "會話";
+"minutes_label"     = "分鐘";
+
