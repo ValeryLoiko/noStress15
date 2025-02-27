@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "Jak provádět dechová cvičení?";
+"instruction_text"  = "1. Zhluboka se nadechněte, naplňte plíce úplně.\n2. Pomalu vydechněte ústy, ale ne úplně.\n3. Opakujte 30 hlubokých nádechů a výdechů.\n4. Po 30. výdechu zadržte dech co nejdéle.\n5. Poté se hluboce nadechněte a zadržte dech na 15 sekund.\n6. Vydechněte 😊 a opakujte celý cyklus 3krát.\n\n💡 Tip: Cvičení provádějte v pohodlné poloze, vsedě nebo vleže.";
+
+"donate_title"      = "Podpořte projekt";
+"donate_text"       = "Vaše dary nám pomáhají vyvíjet aplikaci a přidávat nové funkce. Děkujeme za vaši podporu! ❤️";
+"donate_warning"    = "chyba";
+"donate_warning_text" = "Něco se pokazilo. Zkuste to znovu.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Kopírovat";
+"thank_you"         = "Děkujeme!";
+"copied_text"       = "Odkaz zkopírován";
+
+"home_instruction"  = "Instrukce";
+"home_timer"        = "Praxe";
+"home_stats"        = "Statistiky";
+"home_language"     = "Jazyk";
+"home_settings"     = "Nastavení";
+"home_donate"       = "Dary";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Další";
+"start_button"       = "Start";
+"pause_button"       = "Pauza";
+"music_button"       = "Hudba";
+"statistic_button"   = "Statistiky";
+"15sec_button"       = "15 sek";
+"clean_button"      = "Vymazat historii";
+"link_coppied"      = "Odkaz zkopírován";
+"link_message"      = "Odkaz na LinkedIn uložen do schránky.";
+
+"seconds_label"     = "sekundy";
+
+"stats_day"         = "Den";
+"stats_week"        = "Týden";
+"stats_month"       = "Měsíc";
+"clear_history"     = "Vymazat historii";
+"average_duration"  = "Průměrná doba";
+"record_label"      = "Rekord";
+"sessions_label"    = "Relace";
+"minutes_label"     = "min";
+
