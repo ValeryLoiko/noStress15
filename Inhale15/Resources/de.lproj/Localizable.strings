@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "Wie führt man Atemübungen durch?";
+"instruction_text"  = "1. Atme tief ein und fülle deine Lungen vollständig.\n2. Atme langsam durch den Mund aus, aber nicht vollständig.\n3. Wiederhole 30 tiefe Ein- und Ausatmungen.\n4. Nach der 30. Ausatmung halte den Atem so lange wie möglich an.\n5. Dann atme tief ein und halte den Atem 15 Sekunden lang an.\n6. Atme aus 😊 und wiederhole den gesamten Zyklus 3-mal.\n\n💡 Tipp: Führe die Übung in einer bequemen Position durch, entweder im Sitzen oder im Liegen.";
+
+"donate_title"      = "Unterstütze das Projekt";
+"donate_text"       = "Deine Spenden helfen uns, die App weiterzuentwickeln und neue Funktionen hinzuzufügen. Vielen Dank für deine Unterstützung! ❤️";
+"donate_warning"    = "Fehler";
+"donate_warning_text" = "Etwas ist schiefgelaufen. Versuche es erneut.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Kopieren";
+"thank_you"         = "Danke!";
+"copied_text"       = "Link kopiert";
+
+"home_instruction"  = "Anleitung";
+"home_timer"        = "Übung";
+"home_stats"        = "Statistik";
+"home_language"     = "Sprache";
+"home_settings"     = "Einstellungen";
+"home_donate"       = "Spenden";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Weiter";
+"start_button"      = "Start";
+"pause_button"      = "Pause";
+"music_button"      = "Musik";
+"statistic_button"  = "Statistik";
+"15sec_button"      = "15 Sek";
+"clean_button"      = "Verlauf löschen";
+"link_coppied"      = "Link kopiert";
+"link_message"      = "LinkedIn-Link in die Zwischenablage kopiert.";
+
+"seconds_label"     = "Sekunden";
+
+"stats_day"         = "Tag";
+"stats_week"        = "Woche";
+"stats_month"       = "Monat";
+"clear_history"     = "Verlauf löschen";
+"average_duration"  = "Durchschnittliche Dauer";
+"record_label"      = "Rekord";
+"sessions_label"    = "Sitzungen";
+"minutes_label"     = "Min";
+
