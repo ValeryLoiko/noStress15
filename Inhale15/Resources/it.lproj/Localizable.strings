@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "Come eseguire gli esercizi di respirazione?";
+"instruction_text"  = "1. Fai un respiro profondo e riempi completamente i polmoni.\n2. Espira lentamente attraverso la bocca, ma non completamente.\n3. Ripeti 30 inspirazioni ed espirazioni profonde.\n4. Dopo la 30ª espirazione, trattieni il respiro il più a lungo possibile.\n5. Poi inspira profondamente e trattieni il respiro per 15 secondi.\n6. Espira 😊 e ripeti l'intero ciclo 3 volte.\n\n💡 Suggerimento: Esegui l'esercizio in una posizione comoda, seduto o sdraiato.";
+
+"donate_title"      = "Sostieni il progetto";
+"donate_text"       = "Le tue donazioni ci aiutano a sviluppare l'app e ad aggiungere nuove funzionalità. Grazie per il tuo supporto! ❤️";
+"donate_warning"    = "errore";
+"donate_warning_text" = "Qualcosa è andato storto. Riprova.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Copia";
+"thank_you"         = "Grazie!";
+"copied_text"       = "Link copiato";
+
+"home_instruction"  = "Istruzioni";
+"home_timer"        = "Pratica";
+"home_stats"        = "Statistiche";
+"home_language"     = "Lingua";
+"home_settings"     = "Impostazioni";
+"home_donate"       = "Donazioni";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Avanti";
+"start_button"      = "Inizia";
+"pause_button"      = "Pausa";
+"music_button"      = "Musica";
+"statistic_button"  = "Statistiche";
+"15sec_button"      = "15 sec";
+"clean_button"      = "Cancella cronologia";
+"link_coppied"      = "Link copiato";
+"link_message"      = "Link LinkedIn copiato negli appunti.";
+
+"seconds_label"     = "secondi";
+
+"stats_day"         = "Giorno";
+"stats_week"        = "Settimana";
+"stats_month"       = "Mese";
+"clear_history"     = "Cancella cronologia";
+"average_duration"  = "Durata media";
+"record_label"      = "Record";
+"sessions_label"    = "Sessioni";
+"minutes_label"     = "min";
+
