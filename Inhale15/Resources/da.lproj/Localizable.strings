@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "Hvordan udfører man vejrtrækningsøvelser?";
+"instruction_text"  = "1. Tag en dyb indånding, fyld dine lunger helt op.\n2. Udånd langsomt gennem munden, men ikke helt.\n3. Gentag 30 dybe ind- og udåndinger.\n4. Efter den 30. udånding, hold vejret så længe som muligt.\n5. Tag derefter en dyb indånding og hold vejret i 15 sekunder.\n6. Pust ud 😊 og gentag hele cyklussen 3 gange.\n\n💡 Tip: Udfør øvelsen i en behagelig position, enten siddende eller liggende.";
+
+"donate_title"      = "Støt projektet";
+"donate_text"       = "Dine donationer hjælper os med at udvikle appen og tilføje nye funktioner. Tak for din støtte! ❤️";
+"donate_warning"    = "fejl";
+"donate_warning_text" = "Noget gik galt. Prøv igen.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Kopiér";
+"thank_you"         = "Tak!";
+"copied_text"       = "Link kopieret";
+
+"home_instruction"  = "Instruktioner";
+"home_timer"        = "Øvelse";
+"home_stats"        = "Statistik";
+"home_language"     = "Sprog";
+"home_settings"     = "Indstillinger";
+"home_donate"       = "Donationer";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Næste";
+"start_button"      = "Start";
+"pause_button"      = "Pause";
+"music_button"      = "Musik";
+"statistic_button"  = "Statistik";
+"15sec_button"      = "15 sek";
+"clean_button"      = "Ryd historik";
+"link_coppied"      = "Link kopieret";
+"link_message"      = "LinkedIn-link kopieret til udklipsholder.";
+
+"seconds_label"     = "sekunder";
+
+"stats_day"         = "Dag";
+"stats_week"        = "Uge";
+"stats_month"       = "Måned";
+"clear_history"     = "Ryd historik";
+"average_duration"  = "Gennemsnitlig varighed";
+"record_label"      = "Rekord";
+"sessions_label"    = "Sessioner";
+"minutes_label"     = "min";
+
