@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "Nefes egzersizleri nasıl yapılır?";
+"instruction_text"  = "1. Derin bir nefes alın ve akciğerlerinizi tamamen doldurun.\n2. Ağzınızdan yavaşça nefes verin, ancak tamamen değil.\n3. 30 derin nefes alıp verin.\n4. 30. nefes verişten sonra, nefesinizi mümkün olduğunca uzun süre tutun.\n5. Sonra derin bir nefes alın ve nefesinizi 15 saniye boyunca tutun.\n6. Nefes verin 😊 ve tüm döngüyü 3 kez tekrarlayın.\n\n💡 İpucu: Egzersizi rahat bir pozisyonda, oturarak veya uzanarak yapın.";
+
+"donate_title"      = "Projeyi Destekleyin";
+"donate_text"       = "Bağışlarınız, uygulamamızı geliştirmemize ve yeni özellikler eklememize yardımcı olur. Desteğiniz için teşekkürler! ❤️";
+"donate_warning"    = "hata";
+"donate_warning_text" = "Bir şeyler ters gitti. Tekrar deneyin.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Kopyala";
+"thank_you"         = "Teşekkürler!";
+"copied_text"       = "Bağlantı kopyalandı";
+
+"home_instruction"  = "Talimatlar";
+"home_timer"        = "Egzersiz";
+"home_stats"        = "İstatistikler";
+"home_language"     = "Dil";
+"home_settings"     = "Ayarlar";
+"home_donate"       = "Bağışlar";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "İleri";
+"start_button"      = "Başlat";
+"pause_button"      = "Duraklat";
+"music_button"      = "Müzik";
+"statistic_button"  = "İstatistikler";
+"15sec_button"      = "15 sn";
+"clean_button"      = "Geçmişi Temizle";
+"link_coppied"      = "Bağlantı kopyalandı";
+"link_message"      = "LinkedIn bağlantısı panoya kopyalandı.";
+
+"seconds_label"     = "saniye";
+
+"stats_day"         = "Gün";
+"stats_week"        = "Hafta";
+"stats_month"       = "Ay";
+"clear_history"     = "Geçmişi Temizle";
+"average_duration"  = "Ortalama Süre";
+"record_label"      = "Rekor";
+"sessions_label"    = "Seanslar";
+"minutes_label"     = "dk";
+
