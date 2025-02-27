@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "Comment réaliser des exercices de respiration ?";
+"instruction_text"  = "1. Inspirez profondément et remplissez complètement vos poumons.\n2. Expirez lentement par la bouche, mais pas complètement.\n3. Répétez 30 inspirations et expirations profondes.\n4. Après la 30e expiration, retenez votre souffle aussi longtemps que possible.\n5. Ensuite, inspirez profondément et retenez votre souffle pendant 15 secondes.\n6. Expirez 😊 et répétez tout le cycle 3 fois.\n\n💡 Astuce : Effectuez l'exercice dans une position confortable, assis ou allongé.";
+
+"donate_title"      = "Soutenir le projet";
+"donate_text"       = "Vos dons nous aident à développer l'application et à ajouter de nouvelles fonctionnalités. Merci pour votre soutien ! ❤️";
+"donate_warning"    = "erreur";
+"donate_warning_text" = "Quelque chose s'est mal passé. Essayez à nouveau.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Copier";
+"thank_you"         = "Merci !";
+"copied_text"       = "Lien copié";
+
+"home_instruction"  = "Instructions";
+"home_timer"        = "Pratique";
+"home_stats"        = "Statistiques";
+"home_language"     = "Langue";
+"home_settings"     = "Paramètres";
+"home_donate"       = "Dons";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Suivant";
+"start_button"      = "Démarrer";
+"pause_button"      = "Pause";
+"music_button"      = "Musique";
+"statistic_button"  = "Statistiques";
+"15sec_button"      = "15 sec";
+"clean_button"      = "Effacer l'historique";
+"link_coppied"      = "Lien copié";
+"link_message"      = "Lien LinkedIn copié dans le presse-papiers.";
+
+"seconds_label"     = "secondes";
+
+"stats_day"         = "Jour";
+"stats_week"        = "Semaine";
+"stats_month"       = "Mois";
+"clear_history"     = "Effacer l'historique";
+"average_duration"  = "Durée moyenne";
+"record_label"      = "Record";
+"sessions_label"    = "Sessions";
+"minutes_label"     = "min";
+
