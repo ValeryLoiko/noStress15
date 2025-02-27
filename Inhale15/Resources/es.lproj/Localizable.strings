@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "¿Cómo realizar ejercicios de respiración?";
+"instruction_text"  = "1. Inhala profundamente y llena tus pulmones por completo.\n2. Exhala lentamente por la boca, pero no completamente.\n3. Repite 30 inhalaciones y exhalaciones profundas.\n4. Después de la 30ª exhalación, aguanta la respiración el mayor tiempo posible.\n5. Luego, inhala profundamente y mantén la respiración durante 15 segundos.\n6. Exhala 😊 y repite todo el ciclo 3 veces.\n\n💡 Consejo: Realiza el ejercicio en una posición cómoda, sentado o acostado.";
+
+"donate_title"      = "Apoya el proyecto";
+"donate_text"       = "Tus donaciones nos ayudan a desarrollar la aplicación y agregar nuevas funciones. ¡Gracias por tu apoyo! ❤️";
+"donate_warning"    = "error";
+"donate_warning_text" = "Algo salió mal. Inténtalo de nuevo.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Copiar";
+"thank_you"         = "¡Gracias!";
+"copied_text"       = "Enlace copiado";
+
+"home_instruction"  = "Instrucciones";
+"home_timer"        = "Práctica";
+"home_stats"        = "Estadísticas";
+"home_language"     = "Idioma";
+"home_settings"     = "Configuración";
+"home_donate"       = "Donaciones";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Siguiente";
+"start_button"      = "Iniciar";
+"pause_button"      = "Pausa";
+"music_button"      = "Música";
+"statistic_button"  = "Estadísticas";
+"15sec_button"      = "15 seg";
+"clean_button"      = "Borrar historial";
+"link_coppied"      = "Enlace copiado";
+"link_message"      = "Enlace de LinkedIn copiado al portapapeles.";
+
+"seconds_label"     = "segundos";
+
+"stats_day"         = "Día";
+"stats_week"        = "Semana";
+"stats_month"       = "Mes";
+"clear_history"     = "Borrar historial";
+"average_duration"  = "Duración media";
+"record_label"      = "Récord";
+"sessions_label"    = "Sesiones";
+"minutes_label"     = "min";
+
