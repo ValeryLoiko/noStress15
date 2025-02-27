@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "Hur utför man andningsövningar?";
+"instruction_text"  = "1. Andas in djupt och fyll dina lungor helt.\n2. Andas långsamt ut genom munnen, men inte helt.\n3. Upprepa 30 djupa in- och utandningar.\n4. Efter den 30:e utandningen, håll andan så länge som möjligt.\n5. Ta sedan ett djupt andetag och håll andan i 15 sekunder.\n6. Andas ut 😊 och upprepa hela cykeln 3 gånger.\n\n💡 Tips: Utför övningen i en bekväm position, sittande eller liggande.";
+
+"donate_title"      = "Stöd projektet";
+"donate_text"       = "Dina donationer hjälper oss att utveckla appen och lägga till nya funktioner. Tack för ditt stöd! ❤️";
+"donate_warning"    = "fel";
+"donate_warning_text" = "Något gick fel. Försök igen.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Kopiera";
+"thank_you"         = "Tack!";
+"copied_text"       = "Länk kopierad";
+
+"home_instruction"  = "Instruktioner";
+"home_timer"        = "Övning";
+"home_stats"        = "Statistik";
+"home_language"     = "Språk";
+"home_settings"     = "Inställningar";
+"home_donate"       = "Donationer";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Nästa";
+"start_button"      = "Start";
+"pause_button"      = "Paus";
+"music_button"      = "Musik";
+"statistic_button"  = "Statistik";
+"15sec_button"      = "15 sek";
+"clean_button"      = "Rensa historik";
+"link_coppied"      = "Länk kopierad";
+"link_message"      = "LinkedIn-länk kopierad till urklipp.";
+
+"seconds_label"     = "sekunder";
+
+"stats_day"         = "Dag";
+"stats_week"        = "Vecka";
+"stats_month"       = "Månad";
+"clear_history"     = "Rensa historik";
+"average_duration"  = "Genomsnittlig varaktighet";
+"record_label"      = "Rekord";
+"sessions_label"    = "Sessioner";
+"minutes_label"     = "min";
+
