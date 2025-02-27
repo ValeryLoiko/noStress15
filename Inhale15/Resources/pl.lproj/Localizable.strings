@@ -1,0 +1,50 @@
+/*
+  Localizable.strings
+  noStress15
+
+  Created by Diana on 20/02/2025.
+  
+*/
+
+"instruction_title" = "Jak wykonywać ćwiczenia oddechowe?";
+"instruction_text"  = "1. Weź głęboki oddech i całkowicie wypełnij płuca.\n2. Powoli wydychaj powietrze przez usta, ale nie całkowicie.\n3. Powtórz 30 głębokich wdechów i wydechów.\n4. Po 30. wydechu wstrzymaj oddech na jak najdłużej.\n5. Następnie weź głęboki wdech i wstrzymaj oddech na 15 sekund.\n6. Wydychaj 😊 i powtórz cały cykl 3 razy.\n\n💡 Wskazówka: Ćwiczenie wykonuj w wygodnej pozycji, siedząc lub leżąc.";
+
+"donate_title"      = "Wspieraj projekt";
+"donate_text"       = "Twoje darowizny pomagają nam rozwijać aplikację i dodawać nowe funkcje. Dziękujemy za wsparcie! ❤️";
+"donate_warning"    = "błąd";
+"donate_warning_text" = "Coś poszło nie tak. Spróbuj ponownie.";
+"usdt_label"        = "USDT";
+"copy_button"       = "Kopiuj";
+"thank_you"         = "Dziękujemy!";
+"copied_text"       = "Link skopiowany";
+
+"home_instruction"  = "Instrukcja";
+"home_timer"        = "Ćwiczenie";
+"home_stats"        = "Statystyki";
+"home_language"     = "Język";
+"home_settings"     = "Ustawienia";
+"home_donate"       = "Darowizny";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "Dalej";
+"start_button"      = "Start";
+"pause_button"      = "Pauza";
+"music_button"      = "Muzyka";
+"statistic_button"  = "Statystyki";
+"15sec_button"      = "15 sek";
+"clean_button"      = "Wyczyść historię";
+"link_coppied"      = "Link skopiowany";
+"link_message"      = "Link do LinkedIn skopiowany do schowka.";
+
+"seconds_label"     = "sekundy";
+
+"stats_day"         = "Dzień";
+"stats_week"        = "Tydzień";
+"stats_month"       = "Miesiąc";
+"clear_history"     = "Wyczyść historię";
+"average_duration"  = "Średni czas";
+"record_label"      = "Rekord";
+"sessions_label"    = "Sesje";
+"minutes_label"     = "min";
+
+
