@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   noStress15
 
@@ -6,5 +6,44 @@
   
 */
 
-"hello" = "Hello!";
-"start_button" = "Start";
+"instruction_title" = "呼吸エクササイズの方法";
+"instruction_text"  = "1. 深く息を吸い、肺を完全に満たします。\n2. 口からゆっくり息を吐きますが、完全には吐き切りません。\n3. 深い吸気と呼気を30回繰り返します。\n4. 30回目の呼気の後、可能な限り息を止めます。\n5. その後、深く息を吸い、15秒間息を止めます。\n6. 息を吐き😊、このサイクルを3回繰り返します。\n\n💡 ヒント: 座るか横になった快適な姿勢でエクササイズを行いましょう。";
+
+"donate_title"      = "プロジェクトを支援";
+"donate_text"       = "皆様のご支援により、アプリの開発や新機能の追加が可能になります。ご協力ありがとうございます！❤️";
+"donate_warning"    = "エラー";
+"donate_warning_text" = "問題が発生しました。もう一度お試しください。";
+"usdt_label"        = "USDT";
+"copy_button"       = "コピー";
+"thank_you"         = "ありがとうございます！";
+"copied_text"       = "リンクをコピーしました";
+
+"home_instruction"  = "説明";
+"home_timer"        = "練習";
+"home_stats"        = "統計";
+"home_language"     = "言語";
+"home_settings"     = "設定";
+"home_donate"       = "寄付";
+"app_name"          = "no Stress 15";
+
+"next_button"       = "次へ";
+"start_button"      = "開始";
+"pause_button"      = "一時停止";
+"music_button"      = "音楽";
+"statistic_button"  = "統計";
+"15sec_button"      = "15秒";
+"clean_button"      = "履歴を削除";
+"link_coppied"      = "リンクをコピーしました";
+"link_message"      = "LinkedInのリンクをクリップボードにコピーしました。";
+
+"seconds_label"     = "秒";
+
+"stats_day"         = "日";
+"stats_week"        = "週";
+"stats_month"       = "月";
+"clear_history"     = "履歴を削除";
+"average_duration"  = "平均時間";
+"record_label"      = "記録";
+"sessions_label"    = "セッション";
+"minutes_label"     = "分";
+
