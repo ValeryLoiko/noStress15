@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840A36D22D712ABB006ABE6B /* IMG_4246.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 840A36D12D712ABA006ABE6B /* IMG_4246.MP4 */; };
+		840A36D42D712D66006ABE6B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A36D32D712D66006ABE6B /* HomeViewModel.swift */; };
+		840A36D62D7132BF006ABE6B /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A36D52D7132BF006ABE6B /* VideoService.swift */; };
 		842283552D6402F8003566F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842283542D6402F8003566F3 /* HomeViewController.swift */; };
 		842283572D654CEA003566F3 /* yoga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 842283562D654CE9003566F3 /* yoga.mp3 */; };
 		842283592D654D56003566F3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842283582D654D56003566F3 /* SettingsViewModel.swift */; };
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840A36D12D712ABA006ABE6B /* IMG_4246.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = IMG_4246.MP4; sourceTree = "<group>"; };
+		840A36D32D712D66006ABE6B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		840A36D52D7132BF006ABE6B /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoService.swift; path = Inhale15/ViewModels/VideoService.swift; sourceTree = SOURCE_ROOT; };
 		842283542D6402F8003566F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		842283562D654CE9003566F3 /* yoga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yoga.mp3; sourceTree = "<group>"; };
 		842283582D654D56003566F3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 		84899D632D63F5F200128432 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				840A36D52D7132BF006ABE6B /* VideoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 				842B55D42D4FAD50008301BE /* TimerViewModel.swift */,
 				842B55D62D52C16C008301BE /* StatsViewModel.swift */,
 				842283582D654D56003566F3 /* SettingsViewModel.swift */,
+				840A36D32D712D66006ABE6B /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 		84B2465C2D4AC566009A3963 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				840A36D12D712ABA006ABE6B /* IMG_4246.MP4 */,
 				842283602D67D85C003566F3 /* Localizable.strings */,
 				842283562D654CE9003566F3 /* yoga.mp3 */,
 				84829D1C2D4AD2BA0009CC11 /* Animation - 1727784149695.json */,
@@ -416,6 +425,7 @@
 				8422835E2D67D85C003566F3 /* Localizable.strings in Resources */,
 				84621B862D46EC100005F339 /* LaunchScreen.storyboard in Resources */,
 				84621B832D46EC100005F339 /* Assets.xcassets in Resources */,
+				840A36D22D712ABB006ABE6B /* IMG_4246.MP4 in Resources */,
 				842283572D654CEA003566F3 /* yoga.mp3 in Resources */,
 				84829D1D2D4AD2BA0009CC11 /* Animation - 1727784149695.json in Resources */,
 			);
@@ -442,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840A36D62D7132BF006ABE6B /* VideoService.swift in Sources */,
 				842B55D52D4FAD50008301BE /* TimerViewModel.swift in Sources */,
 				84B246602D4AC65A009A3963 /* InstructionViewController.swift in Sources */,
 				842283732D67E34B003566F3 /* LabelText.swift in Sources */,
@@ -461,6 +472,7 @@
 				84B2465E2D4AC641009A3963 /* SplashViewController.swift in Sources */,
 				842283552D6402F8003566F3 /* HomeViewController.swift in Sources */,
 				84899D662D63F61100128432 /* UIFactory.swift in Sources */,
+				840A36D42D712D66006ABE6B /* HomeViewModel.swift in Sources */,
 				842B55D02D4F7F32008301BE /* BreathSession+CoreDataProperties.swift in Sources */,
 				84829D222D4ADEFC0009CC11 /* SplashViewModel.swift in Sources */,
 				849C39802D56AD69005A3550 /* DonateViewController.swift in Sources */,

@@ -7,86 +7,122 @@
 
 import UIKit
 import SnapKit
+import AVKit
 
 class HomeViewController: UIViewController {
     
-    private let titleLabel = UIFactory.createLabel(fontSize: 32, weight: .bold, textColor: ColorPalette.primary)
+    private let viewModel = HomeViewModel()
+    private var playerLayer: AVPlayerLayer?
     
-    private lazy var instructionButton: UIButton = {
-        UIFactory.createButton(title: "📖 \(LabelText.homeInstruction.text)", backgroundColor: ColorPalette.primary)
+    private let overlayView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        return view
     }()
     
-    private lazy var timerButton: UIButton = {
-        UIFactory.createButton(title: "⏱ \(LabelText.homeTimer.text)", backgroundColor: ColorPalette.primary)
-    }()
+    private let titleLabel = UIFactory.createLabel(
+        fontSize: 36,
+        weight: .bold,
+        textColor: .white
+    )
     
-    private lazy var statsButton: UIButton = {
-        UIFactory.createButton(title: "📊 \(LabelText.homeStats.text)", backgroundColor: ColorPalette.primary)
-    }()
-    
-    private lazy var settingsButton: UIButton = {
-        UIFactory.createButton(title: "⚙️ \(LabelText.homeSettings.text)", backgroundColor: ColorPalette.primary.withAlphaComponent(0.7))
-    }()
+    private lazy var instructionButton = createStyledButton(title: "📖 " + LabelText.homeInstruction.text)
+    private lazy var timerButton = createStyledButton(title: "⏱ " + LabelText.homeTimer.text)
+    private lazy var statsButton = createStyledButton(title: "📊 " + LabelText.homeStats.text)
+    private lazy var settingsButton = createStyledButton(title: "⚙️ " + LabelText.homeSettings.text)
     
     private lazy var buttonsStackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [instructionButton, timerButton, statsButton, settingsButton])
+        let stack = UIStackView(arrangedSubviews: [
+            instructionButton, timerButton, statsButton, settingsButton
+        ])
         stack.axis = .vertical
-        stack.spacing = 16
+        stack.spacing = 20
         stack.distribution = .fillEqually
+        stack.alignment = .fill
         return stack
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupBindings()
+        viewModel.loadVideo(named: "IMG_4246", ofType: "MP4")
         setupActions()
     }
     
     private func setupUI() {
-        view.backgroundColor = ColorPalette.backgroundDark
-        
+        view.addSubview(overlayView)
         view.addSubview(titleLabel)
         view.addSubview(buttonsStackView)
         
-        titleLabel.text = "no Stress 15"
-        titleLabel.textAlignment = .center
+        overlayView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        titleLabel.text = LabelText.appName.text
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(50)
             make.centerX.equalToSuperview()
         }
         
         buttonsStackView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(40)
             make.centerX.equalToSuperview()
-            make.width.equalTo(220)
+            make.width.equalToSuperview().multipliedBy(0.75)
+        }
+    }
+    
+    private func createStyledButton(title: String) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 22, weight: .bold)
+        button.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 1.5
+        button.layer.borderColor = UIColor.white.withAlphaComponent(0.6).cgColor
+        button.snp.makeConstraints { make in
+            make.height.equalTo(60)
+        }
+        return button
+    }
+    
+    private func setupBindings() {
+        viewModel.onVideoReady = { [weak self] player in
+            guard let self = self else { return }
+            self.playerLayer = AVPlayerLayer(player: player)
+            self.playerLayer?.videoGravity = .resizeAspectFill
+            self.playerLayer?.frame = self.view.bounds
+            if let playerLayer = self.playerLayer {
+                self.view.layer.insertSublayer(playerLayer, at: 0)
+            }
+        }
+        
+        viewModel.onNavigateTo = { [weak self] viewController in
+            self?.navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
     private func setupActions() {
-        instructionButton.addTarget(self, action: #selector(openInstruction), for: .touchUpInside)
-        timerButton.addTarget(self, action: #selector(openTimer), for: .touchUpInside)
-        statsButton.addTarget(self, action: #selector(openStats), for: .touchUpInside)
-        settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
+        instructionButton.addTarget(self, action: #selector(openScreen(_:)), for: .touchUpInside)
+        timerButton.addTarget(self, action: #selector(openScreen(_:)), for: .touchUpInside)
+        statsButton.addTarget(self, action: #selector(openScreen(_:)), for: .touchUpInside)
+        settingsButton.addTarget(self, action: #selector(openScreen(_:)), for: .touchUpInside)
     }
     
-    @objc private func openInstruction() {
-        let vc = InstructionViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc private func openTimer() {
-        let vc = TimerViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc private func openStats() {
-        let vc = StatsViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    @objc private func openSettings() {
-        let vc = SettingsViewController()
-        navigationController?.pushViewController(vc, animated: true)
+    @objc private func openScreen(_ sender: UIButton) {
+        switch sender {
+        case instructionButton:
+            viewModel.navigateTo(screen: .instruction)
+        case timerButton:
+            viewModel.navigateTo(screen: .timer)
+        case statsButton:
+            viewModel.navigateTo(screen: .stats)
+        case settingsButton:
+            viewModel.navigateTo(screen: .settings)
+        default:
+            break
+        }
     }
 }
