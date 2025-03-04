@@ -20,12 +20,6 @@ class SettingsViewController: UIViewController {
         return button
     }()
 
-//    private lazy var resetMusicButton: UIButton = {
-//        let button = UIFactory.createButton(title: "🔄 Начать заново", backgroundColor: ColorPalette.primary.withAlphaComponent(0.7))
-//        button.addTarget(self, action: #selector(resetMusic), for: .touchUpInside)
-//        return button
-//    }()
-
     private lazy var languageButton: UIButton = {
         UIFactory.createButton(title: "🌍  \(LabelText.homeLanguage.text)", backgroundColor: ColorPalette.primary)
     }()

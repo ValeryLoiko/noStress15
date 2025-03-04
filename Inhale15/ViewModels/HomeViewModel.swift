@@ -13,39 +13,23 @@ class HomeViewModel {
         case instruction, timer, stats, settings
     }
     
-    var onVideoReady: ((AVPlayer) -> Void)?
-    var onNavigateTo: ((UIViewController) -> Void)?
-    private var player: AVPlayer?
-    private var isReversing = false
+    private let videoService: VideoService
+    
+    init(videoService: VideoService) {
+        self.videoService = videoService
+    }
+    
+    var onVideoReady: ((AVPlayer) -> Void)? {
+        get { videoService.onVideoReady }
+        set { videoService.onVideoReady = newValue }
+    }
     
     func loadVideo(named: String, ofType type: String) {
-        player = VideoService.createPlayer(forResource: named, ofType: type)
-        guard let player = player else { return }
-        onVideoReady?(player)
-        player.play()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(videoDidEnd),
-            name: .AVPlayerItemDidPlayToEndTime,
-            object: player.currentItem
-        )
+        videoService.loadVideo(named: named, ofType: type)
     }
     
-    @objc private func videoDidEnd() {
-        guard let player = player else { return }
-        let duration = player.currentItem?.duration ?? .zero
-        
-        if isReversing {
-            player.seek(to: .zero)
-            player.rate = 1.0 // Воспроизведение вперед
-        } else {
-            player.seek(to: duration)
-            player.rate = -1.0 // Обратное воспроизведение
-        }
-        isReversing.toggle()
-    }
-    
+    var onNavigateTo: ((UIViewController) -> Void)?
+
     func navigateTo(screen: Screen) {
         switch screen {
         case .instruction:

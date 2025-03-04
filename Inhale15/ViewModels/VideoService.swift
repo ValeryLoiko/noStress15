@@ -9,11 +9,43 @@ import Foundation
 import AVFoundation
 
 class VideoService {
-    static func createPlayer(forResource resource: String, ofType type: String) -> AVPlayer? {
-        guard let path = Bundle.main.path(forResource: resource, ofType: type) else { return nil }
+    
+    private var player: AVPlayer?
+    private var isReversing = false
+    var onVideoReady: ((AVPlayer) -> Void)?
+
+    /// Загружает видео и начинает воспроизведение
+    func loadVideo(named: String, ofType type: String) {
+        guard let path = Bundle.main.path(forResource: named, ofType: type) else { return }
         let url = URL(fileURLWithPath: path)
-        let player = AVPlayer(url: url)
-        player.actionAtItemEnd = .none
-        return player
+        let playerItem = AVPlayerItem(url: url)
+        
+        player = AVPlayer(playerItem: playerItem)
+        player?.actionAtItemEnd = .pause
+        player?.isMuted = true
+        onVideoReady?(player!)
+        player?.play()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(videoDidEnd),
+            name: .AVPlayerItemDidPlayToEndTime,
+            object: playerItem
+        )
+    }
+    
+    @objc private func videoDidEnd() {
+        guard let player = player else { return }
+        
+        if isReversing {
+            player.seek(to: .zero)
+            player.rate = 1.0
+        } else {
+            let duration = player.currentItem?.duration ?? .zero
+            player.seek(to: duration)
+            player.rate = -1.0
+        }
+        
+        isReversing.toggle()
     }
 }
