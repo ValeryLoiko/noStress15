@@ -9,64 +9,49 @@ import UIKit
 import SnapKit
 import AVFoundation
 
-/// Экран инструкции, где отображается текстовое описание процесса.
+/// Экран инструкции, стилизованный как HomeVC
 class InstructionViewController: UIViewController {
     
-    // MARK: - Свойства
-    
-    /// ViewModel, отвечающая за логику экрана.
     private let viewModel: InstructionViewModel
-    
-    /// Слой для отображения видео на заднем фоне.
     private var playerLayer: AVPlayerLayer?
-
-    // MARK: - Инициализация
     
-    /// Инициализатор контроллера, передающий `VideoService` в `InstructionViewModel`.
     init() {
-        let videoService = VideoService() // ✅ Создаём сервис видео
-        self.viewModel = InstructionViewModel(videoService: videoService) // ✅ Передаём сервис в ViewModel
-        super.init(nibName: nil, bundle: nil) // ✅ Вызываем родительский инициализатор
+        let videoService = VideoService()
+        self.viewModel = InstructionViewModel(videoService: videoService)
+        super.init(nibName: nil, bundle: nil)
     }
     
-    /// Обязательный инициализатор, вызываемый при использовании Storyboard (не используется).
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - UI-компоненты
     
-    /// Полупрозрачный затемняющий слой.
     private let overlayView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         return view
     }()
     
-    /// Заголовок экрана.
-    private let titleLabel = UIFactory.createLabel(
-        fontSize: 20,
-        weight: .bold,
-        textColor: ColorPalette.primary
-    )
+    private let titleLabel: UILabel = {
+        let label = UIFactory.createLabel(
+            fontSize: 28,
+            weight: .bold,
+            textColor: .white,
+            alignment: .center,
+            lines: 2
+        )
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.7
+        return label
+    }()
     
-    /// Текст инструкции.
     private let instructionLabel = UIFactory.createLabel(
-        fontSize: 17,
+        fontSize: 18,
         textColor: .white,
-        alignment: .left,
+        alignment: .center,
         lines: 0
     )
-    
-    /// Кнопка "Далее" для перехода на следующий экран.
-    private lazy var nextButton: UIButton = {
-        let button = UIFactory.createButton(
-            title: LabelText.nextButton.text,
-            backgroundColor: ColorPalette.primary
-        )
-        button.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
-        return button
-    }()
     
     // MARK: - Жизненный цикл
     
@@ -74,56 +59,56 @@ class InstructionViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupBindings()
-        viewModel.loadVideo(named: "IMG_4300", ofType: "MP4") // ✅ Загружаем видео
+        viewModel.loadVideo(named: "IMG_4300", ofType: "MP4")
+        animateAppearance()
     }
     
-    // MARK: - Настройка интерфейса
+    // MARK: - Настройка UI
     
-    /// Настраивает интерфейс экрана.
     private func setupUI() {
-        view.backgroundColor = .black // ✅ Фон на случай, если видео не загрузится
-
-        // Добавляем слои на экран
+        view.backgroundColor = .black
+        
         view.addSubview(overlayView)
         view.addSubview(titleLabel)
         view.addSubview(instructionLabel)
-        view.addSubview(nextButton)
-
-        // Настройка затемняющего слоя
+        
         overlayView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        // Настройка заголовка
+        titleLabel.text = LabelText.instructionTitle.text
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             make.centerX.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         
-        // Настройка инструкции
+        instructionLabel.text = LabelText.instructionText.text
         instructionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-80)
             make.left.right.equalToSuperview().inset(20)
         }
+    }
+    
+    // MARK: - Анимация появления
+    
+    private func animateAppearance() {
+        titleLabel.alpha = 0
+        instructionLabel.alpha = 0
         
-        // Настройка кнопки "Далее"
-        nextButton.snp.makeConstraints { make in
-            make.top.equalTo(instructionLabel.snp.bottom).offset(30)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-            make.width.equalTo(160)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-40)
-        }
+        UIView.animate(withDuration: 1.0, delay: 0.3, options: .curveEaseOut, animations: {
+            self.titleLabel.alpha = 1
+        })
+        
+        UIView.animate(withDuration: 1.2, delay: 0.6, options: .curveEaseOut, animations: {
+            self.instructionLabel.alpha = 1
+        })
     }
     
     // MARK: - Привязка данных
     
-    /// Настраивает привязку данных между ViewModel и контроллером.
     private func setupBindings() {
-        titleLabel.text = viewModel.titleText
-        instructionLabel.text = viewModel.instructionText
-
         viewModel.onVideoReady = { [weak self] player in
             guard let self = self else { return }
             self.playerLayer = AVPlayerLayer(player: player)
@@ -134,16 +119,5 @@ class InstructionViewController: UIViewController {
             }
         }
     }
-    
-    // MARK: - Действия
-    
-    /// Обработчик нажатия на кнопку "Далее".
-    @objc private func nextTapped() {
-        viewModel.navigateToNextScreen {
-            let timerVC = TimerViewController()
-            timerVC.modalTransitionStyle = .crossDissolve
-            timerVC.modalPresentationStyle = .fullScreen
-            self.navigationController?.pushViewController(timerVC, animated: true)
-        }
-    }
 }
+
