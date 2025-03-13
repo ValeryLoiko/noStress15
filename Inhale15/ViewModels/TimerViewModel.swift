@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class TimerViewModel {
     private var timer: Timer?
@@ -17,6 +18,23 @@ class TimerViewModel {
     var onSessionsUpdate: (() -> Void)?
     
     var sessions: [BreathSession] = []
+
+    private let videoService: VideoService
+
+    init(videoService: VideoService) {
+        self.videoService = videoService
+    }
+
+    var onVideoReady: ((AVPlayer) -> Void)? {
+        get { videoService.onVideoReady }
+        set { videoService.onVideoReady = newValue }
+    }
+
+    func setupAndPlayVideo(named: String, ofType type: String) {
+        videoService.setupAndPlayVideo(named: named, ofType: type) { player in
+            self.onVideoReady?(player)
+        }
+    }
 
     // 📌 Запуск основного таймера
     func startTimer() {

@@ -40,5 +40,11 @@ class InstructionViewModel {
     func navigateToNextScreen(completion: @escaping () -> Void) {
         completion()
     }
+    
+    func setupAndPlayVideo(named: String, ofType type: String) {
+        videoService.setupAndPlayVideo(named: named, ofType: type) { player in
+            self.onVideoReady?(player)
+        }
+    }
 }
 

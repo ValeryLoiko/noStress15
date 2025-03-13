@@ -48,4 +48,9 @@ class VideoService {
         
         isReversing.toggle()
     }
+
+    func setupAndPlayVideo(named: String, ofType type: String, onVideoReady: @escaping (AVPlayer) -> Void) {
+        loadVideo(named: named, ofType: type)
+        self.onVideoReady = onVideoReady
+    }
 }

@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
         setupBindings()  // Настройка привязки данных
         setupActions()   // Настройка действий для кнопок
         viewModel.loadVideo(named: "IMG_4246", ofType: "MP4") // Загружаем фоновое видео
+        viewModel.setupAndPlayVideo(named: "homeVideo", ofType: "mp4")
     }
     
     // MARK: - UI-компоненты

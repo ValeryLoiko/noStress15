@@ -61,6 +61,7 @@ class InstructionViewController: UIViewController {
         setupBindings()
         viewModel.loadVideo(named: "IMG_4300", ofType: "MP4")
         animateAppearance()
+        viewModel.setupAndPlayVideo(named: "instructionVideo", ofType: "mp4")
     }
     
     // MARK: - Настройка UI

@@ -10,7 +10,7 @@ import SnapKit
 
 class TimerViewController: UIViewController {
     
-    private let viewModel = TimerViewModel()
+    private let viewModel = TimerViewModel(videoService: VideoService())
     
     private lazy var backgroundGradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
@@ -82,6 +82,9 @@ class TimerViewController: UIViewController {
         startPauseButton.addTarget(self, action: #selector(startPauseTapped), for: .touchUpInside)
         fifteenSecButton.addTarget(self, action: #selector(fifteenSecTapped), for: .touchUpInside)
         statsButton.addTarget(self, action: #selector(openStatsTapped), for: .touchUpInside)
+        
+        // Пример использования нового метода
+        viewModel.setupAndPlayVideo(named: "IMG_4301", ofType: "mp4")
     }
     
     override func viewDidLayoutSubviews() {
