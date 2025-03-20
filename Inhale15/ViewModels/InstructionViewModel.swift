@@ -26,15 +26,15 @@ class InstructionViewModel {
     }
     
     /// Замыкание, вызываемое при готовности видео.
-    var onVideoReady: ((AVPlayer) -> Void)? {
-        get { videoService.onVideoReady }
-        set { videoService.onVideoReady = newValue }
-    }
-    
-    /// Загружает видео и запускает воспроизведение.
-    func loadVideo(named: String, ofType type: String) {
-        videoService.loadVideo(named: named, ofType: type)
-    }
+//    var onVideoReady: ((AVPlayer) -> Void)? {
+//        get { videoService.onVideoReady }
+//        set { videoService.onVideoReady = newValue }
+//    }
+//    
+//    /// Загружает видео и запускает воспроизведение.
+//    func loadVideo(named: String, ofType type: String) {
+//        videoService.loadVideo(named: named, ofType: type)
+//    }
     
     /// Переход на следующий экран.
     func navigateToNextScreen(completion: @escaping () -> Void) {

@@ -73,8 +73,8 @@ class InstructionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupBindings()
-        viewModel.loadVideo(named: "IMG_4300", ofType: "MP4") // ✅ Загружаем видео
+   //     setupBindings()
+     //   viewModel.loadVideo(named: "IMG_4300", ofType: "MP4") // ✅ Загружаем видео
     }
     
     // MARK: - Настройка интерфейса
@@ -120,20 +120,20 @@ class InstructionViewController: UIViewController {
     // MARK: - Привязка данных
     
     /// Настраивает привязку данных между ViewModel и контроллером.
-    private func setupBindings() {
-        titleLabel.text = viewModel.titleText
-        instructionLabel.text = viewModel.instructionText
-
-        viewModel.onVideoReady = { [weak self] player in
-            guard let self = self else { return }
-            self.playerLayer = AVPlayerLayer(player: player)
-            self.playerLayer?.videoGravity = .resizeAspectFill
-            self.playerLayer?.frame = self.view.bounds
-            if let playerLayer = self.playerLayer {
-                self.view.layer.insertSublayer(playerLayer, at: 0)
-            }
-        }
-    }
+//    private func setupBindings() {
+//        titleLabel.text = viewModel.titleText
+//        instructionLabel.text = viewModel.instructionText
+//
+//        viewModel.onVideoReady = { [weak self] player in
+//            guard let self = self else { return }
+//            self.playerLayer = AVPlayerLayer(player: player)
+//            self.playerLayer?.videoGravity = .resizeAspectFill
+//            self.playerLayer?.frame = self.view.bounds
+//            if let playerLayer = self.playerLayer {
+//                self.view.layer.insertSublayer(playerLayer, at: 0)
+//            }
+//        }
+//    }
     
     // MARK: - Действия
     

@@ -8,12 +8,11 @@
 import Foundation
 import AVFoundation
 
+/// Сервис для загрузки и воспроизведения видео с реверсивным зацикливанием.
 class VideoService {
-    
     private var player: AVPlayer?
     private var isReversing = false
-    var onVideoReady: ((AVPlayer) -> Void)?
-
+    
     /// Загружает видео и начинает воспроизведение
     func loadVideo(named: String, ofType type: String) {
         guard let path = Bundle.main.path(forResource: named, ofType: type) else { return }
@@ -23,7 +22,6 @@ class VideoService {
         player = AVPlayer(playerItem: playerItem)
         player?.actionAtItemEnd = .pause
         player?.isMuted = true
-        onVideoReady?(player!)
         player?.play()
         
         NotificationCenter.default.addObserver(
@@ -34,17 +32,18 @@ class VideoService {
         )
     }
     
+    /// Возвращает текущий AVPlayer
+    func getPlayer() -> AVPlayer? {
+        return player
+    }
+    
+    /// Обрабатывает окончание воспроизведения видео, переключая направление
     @objc private func videoDidEnd() {
         guard let player = player else { return }
         
-        if isReversing {
-            player.seek(to: .zero)
-            player.rate = 1.0
-        } else {
-            let duration = player.currentItem?.duration ?? .zero
-            player.seek(to: duration)
-            player.rate = -1.0
-        }
+        let duration = player.currentItem?.duration ?? .zero
+        player.seek(to: isReversing ? .zero : duration)
+        player.rate = isReversing ? 1.0 : -1.0
         
         isReversing.toggle()
     }

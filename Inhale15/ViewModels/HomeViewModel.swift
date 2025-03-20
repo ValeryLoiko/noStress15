@@ -8,38 +8,26 @@
 import AVFoundation
 import UIKit
 
+/// ViewModel для главного экрана
 class HomeViewModel {
+    
+    /// Доступные экраны для навигации
     enum Screen {
         case instruction, timer, stats, settings
     }
     
-    private let videoService: VideoService
-    
-    init(videoService: VideoService) {
-        self.videoService = videoService
-    }
-    
-    var onVideoReady: ((AVPlayer) -> Void)? {
-        get { videoService.onVideoReady }
-        set { videoService.onVideoReady = newValue }
-    }
-    
-    func loadVideo(named: String, ofType type: String) {
-        videoService.loadVideo(named: named, ofType: type)
-    }
-    
+    /// Коллбек для обработки перехода на другой экран
     var onNavigateTo: ((UIViewController) -> Void)?
-
+    
+    /// Осуществляет навигацию на указанный экран
     func navigateTo(screen: Screen) {
+        let viewController: UIViewController
         switch screen {
-        case .instruction:
-            onNavigateTo?(InstructionViewController())
-        case .timer:
-            onNavigateTo?(TimerViewController())
-        case .stats:
-            onNavigateTo?(StatsViewController())
-        case .settings:
-            onNavigateTo?(SettingsViewController())
+        case .instruction: viewController = InstructionViewController()
+        case .timer: viewController = TimerViewController()
+        case .stats: viewController = StatsViewController()
+        case .settings: viewController = SettingsViewController()
         }
+        onNavigateTo?(viewController)
     }
 }
